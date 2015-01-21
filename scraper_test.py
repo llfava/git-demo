@@ -14,6 +14,12 @@ def main():
     url = 'http://www.yelp.com/search?find_desc=bars&find_loc=San+Francisco%2C+CA&ns=1'
     browser.visit(url)
 
+    a_lst = browser.find_by_tag('a')
+    for a in a_lst:
+      if a['class'] == 'biz-name':
+        print a['href']
+
+    return
     ##TODO: Need to scrape here
     ##Want to get Business name, yelp url associated with business, number of reviews, aggregate rating, address
     ##Add to file
