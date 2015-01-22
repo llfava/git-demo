@@ -116,6 +116,15 @@ def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, n
     bar_dict.update(bar_dict_iter)
     return(bar_dict)
 
+def get_review_list_marker(browser):
+    r_list = None
+    divs = browser.find_by_tag('div')
+    for div in divs:
+        if div['class'] == 'review-list':
+            r_list = div
+            break
+    return(r_list)
+
 def get_userid(browser):
     ##Will need to get rid of duplicates due to review highlights etc, problem with properly aligning users to their reviews
     userids = []
@@ -125,6 +134,13 @@ def get_userid(browser):
             userids.append(str(a['href']))
     return userids
 
+def get_user_locations(r_list):
+    user_locations = []
+    reviews_list = r_list.find_by_tag('li')
+    for li in reviews_list:
+        if li['class'] == 'user-location':
+            user_locations.append(li.text)
+    return(user_locations)
     
 
 
@@ -184,7 +200,9 @@ def main():
     ## review rating
     ##Add to file
 
+    r_list = get_review_list_marker(browser)
 
+    user_locations = get_user_locations(browser)
 
     end = time.time()
     runtime = end - start
