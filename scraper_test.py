@@ -23,7 +23,6 @@ def get_business_name(browser):
             business_names.append(a.text)
     return business_names
 
-
 def get_business_aggregate_rating(browser):
     business_ratings = []
     i_list = browser.find_by_tag('i')
@@ -115,8 +114,21 @@ def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, n
     bar_dict_iter = dict(zip(keys, values))
     
     bar_dict.update(bar_dict_iter)
-
     return(bar_dict)
+
+def get_userid(browser):
+    ##Will need to get rid of duplicates due to review highlights etc, problem with properly aligning users to their reviews
+    userids = []
+    a_list = browser.find_by_tag('a')
+    for a in a_list:
+        if a['class'] == 'user-display-name':
+            userids.append(str(a['href']))
+    return userids
+
+    
+
+
+
 
 def main():
 
@@ -154,16 +166,25 @@ def main():
         business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(browser)
         bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
         print json.dumps(bar_dict, sort_keys=True, indent=2)
-    with open('bars.txt', 'w') as outfile:
+
+    with open('bars.json', 'w') as outfile:
         json.dump(bar_dict, outfile, indent=2)
 
+    browser.quit()
+    ### End scraping bar + SF search results
+
+    ### Begin scraping review-level data
+    urls = bar_dict.keys()
+    
+    
+    browser = Browser()
+    browser.visit(str(urls[0]))
 
     ##TODO: Go to bar_yelp website and scrape review level data: user id, user location, review date, review text, 
     ## review rating
     ##Add to file
 
 
-#    browser.quit()
 
     end = time.time()
     runtime = end - start
