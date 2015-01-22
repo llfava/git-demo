@@ -101,15 +101,26 @@ def get_business_attributes(browser):
 def make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories):
     keys = business_urls
     values = []
-
     for j in range(len(business_urls)):                                                                                                              
         values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhoods[j], business_addresses[j], categories[j]])
 
     bar_dict = dict(zip(keys, values))
     return(bar_dict)
 
+def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories):
+    keys = business_urls
+    values = []
+    for j in range(len(business_urls)):                                                                                                              
+        values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhoods[j], business_addresses[j], categories[j]])
+    bar_dict_iter = dict(zip(keys, values))
+    
+    bar_dict.update(bar_dict_iter)
+
+    return(bar_dict)
 
 def main():
+
+    start = time.time()
 
     browser = Browser()
 
@@ -120,17 +131,15 @@ def main():
     business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(browser)
     bar_dict = make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
     #print json.dumps(bar_dict, sort_keys=True, indent=2)
-    with open('bars.txt', 'w') as outfile:
-        json.dump(bar_dict, outfile, indent=2)
 
-    return
     #Go to second page of search results
     arrow_link = browser.find_link_by_partial_href('/search?find_desc=bars&find_loc=San+Francisco%2C+CA&start=')
     arrow_link.click()
 
     time.sleep(3) ## Must have time delay here or doesn't work!!!
 
-    business_urls = get_business_attributes(browser)    
+    business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(browser)
+    bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
 
     #Go to third and subsequent pages of search results
     for a in range(2, 5):
@@ -142,7 +151,11 @@ def main():
         delay = random.uniform(3,5)
         time.sleep(delay)
 
-        get_business_attributes(browser)
+        business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(browser)
+        bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
+        print json.dumps(bar_dict, sort_keys=True, indent=2)
+    with open('bars.txt', 'w') as outfile:
+        json.dump(bar_dict, outfile, indent=2)
 
 
     ##TODO: Go to bar_yelp website and scrape review level data: user id, user location, review date, review text, 
@@ -151,6 +164,11 @@ def main():
 
 
 #    browser.quit()
+
+    end = time.time()
+    runtime = end - start
+    print "runtime in minutes: " + str(runtime/60)
+
     return 0
 
 if __name__ == "__main__":
