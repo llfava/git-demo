@@ -212,7 +212,6 @@ def main():
     ### Begin scraping review-level data
 
     user_dict = {}
-    i=0
     for key in bar_dict.keys():
         print key
 
@@ -264,10 +263,11 @@ def main():
             num_reviews_remaining = num_reviews_remaining - num_reviews_page
             print 'Number of reviews remaining after this page is ' + str(num_reviews_remaining)
 
-            
+            num_pages = int(round(float(num_reviews_remaining)/40 + 0.5))
+
             #Go to third and subsequent pages of search results
             if num_reviews_remaining > 0:
-                for a in range(2, 3):
+                for a in range(2, (num_pages + 2)):
                     print a
                     start_num = 40*a
                     arrow_link = browser.find_link_by_partial_href(key + '?start=' + str(start_num))
@@ -287,16 +287,9 @@ def main():
                         json.dump(user_dict, outfile, indent=2)
 
             else:
-                i=i+1
                 browser.quit()
         else:
-            i=i+1
             browser.quit()
-
-        if i > 6:
-            break
-
-
 
 
     end = time.time()
