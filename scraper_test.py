@@ -14,101 +14,186 @@ def make_tag_lists(browser):
     address_list = browser.find_by_tag('address')
     return a_list, i_list, span_list, address_list
 
-def get_business_url(a_list):
+def get_business_id(a_list):
     business_urls = []
+    business_names = []
+    search = "\u2019"
     for a in a_list:
         if a['class'] == 'biz-name':
             business_urls.append(str(a['href']))
-    return business_urls
-
-def get_business_name(a_list):
-    business_names = []
-    for a in a_list:
-        if a['class'] == 'biz-name':
-            business_names.append(a.text)
-    return business_names
+            ###Not sure if I need to correct for unicode or not
+            #s = re.search("(.*)" + search + "(.*)", a.text)
+            #if s:
+            #    b_name = s.group(1) + "'" + s.group(2)
+            #    business_name = {'bar_name': b_name}
+            #else:
+            #    business_name = {'bar_name': a.text}
+            business_name = {'bar_name': a.text}
+            business_names.append(business_name)
+    return (business_urls, business_names)
 
 def get_business_aggregate_rating(i_list):
     business_ratings = []
+    search = " star rating"
     for i in i_list:
         if i['class'] == 'star-img stars_5':
-            business_ratings.append(str(i['title']))
-            continue
-        if i['class'] == 'star-img stars_4':
-            business_ratings.append(str(i['title']))
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
         if i['class'] == 'star-img stars_4_half':
-            business_ratings.append(str(i['title']))
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
-        if i['class'] == 'star-img stars_3':
-            business_ratings.append(str(i['title']))
+        if i['class'] == 'star-img stars_4':
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
         if i['class'] == 'star-img stars_3_half':
-            business_ratings.append(str(i['title']))
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
-        if i['class'] == 'star-img stars_2':
-            business_ratings.append(str(i['title']))
+        if i['class'] == 'star-img stars_3':
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
         if i['class'] == 'star-img stars_2_half':
-            business_ratings.append(str(i['title']))
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
-        if i['class'] == 'star-img stars_1':
-            business_ratings.append(str(i['title']))
+        if i['class'] == 'star-img stars_2':
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
         if i['class'] == 'star-img stars_1_half':
-            business_ratings.append(str(i['title']))
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
+            continue
+        if i['class'] == 'star-img stars_1':
+            s = re.search("(\S*)" + search, i['title'])
+            num_stars = s.group(1)
+            business_rating = {'bar_rating':str(num_stars)}
+            business_ratings.append(business_rating)
             continue
     return business_ratings
 
 def get_num_reviews(span_list):
     num_reviews = []
+    search = ' reviews'
     for span in span_list:
         if span['class'] == 'review-count rating-qualifier':
-            num_reviews.append(str(span.text))
+            s = re.search("(\d*)" + search, span.text)
+            number_of_reviews =  int(s.group(1))
+            num_review = {'bar_num_reviews':str(number_of_reviews)}
+            num_reviews.append(num_review)
     return num_reviews
 
-def get_neighborhood(span_list):
-    neighborhoods = []
+def get_neighborhoods(span_list):
+    neighborhood_1 = []
+    neighborhood_2 = []
+    neighborhood_3 = []
+    search = ","
     for span in span_list:
         if span['class'] == 'neighborhood-str-list':
-            neighborhoods.append(str(span.text))
-    return neighborhoods
+            s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", span.text)
+            s2 = re.search("(.*)" + search + "(.*)", span.text)
+            if s1:
+                hood_1 = s1.group(1)
+                hood_2 = s1.group(2)
+                hood_3 = s1.group(3)
+            elif s2:
+                hood_1 = s2.group(1)
+                hood_2 = s2.group(2)
+                hood_3 = 'none'
+            else:
+                hood_1 = span.text
+                hood_2 = 'none'
+                hood_3 = 'none'
+            neighborhood_1.append({'bar_neighborhood_1':hood_1})
+            neighborhood_2.append({'bar_neighborhood_2':hood_2})
+            neighborhood_3.append({'bar_neighborhood_3':hood_3})
+    return (neighborhood_1, neighborhood_2, neighborhood_3)
 
 def get_business_address(address_list):
     business_addresses = []
+    search = "\n"
     for address in address_list:
-        business_addresses.append(str(address.text))
+        s = re.search("(.*)" + search + "(.*)", address.text)
+        formatted_address = s.group(1) + ', ' + s.group(2)
+        business_address = {'bar_address':formatted_address}
+        business_addresses.append(business_address)
     return business_addresses
 
-def get_business_category(span_list):
-    categories = [] 
+def get_business_categories(span_list):
+    category_1 = []
+    category_2 = []
+    category_3 = []
+    search = ","
     for span in span_list:
         if span['class'] == 'category-str-list':
-            categories.append(str(span.text))
-    return categories
+            s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", span.text)
+            s2 = re.search("(.*)" + search + "(.*)", span.text)
+            if s1:
+                cat_1 = s1.group(1)
+                cat_2 = s1.group(2)
+                cat_3 = s1.group(3)
+            elif s2:
+                cat_1 = s2.group(1)
+                cat_2 = s2.group(2)
+                cat_3 = 'none'
+            else:
+                cat_1 = span.text
+                cat_2 = 'none'
+                cat_3 = 'none'
+            category_1.append({'bar_category_1':cat_1})
+            category_2.append({'bar_category_2':cat_2})
+            category_3.append({'bar_category_3':cat_3})
+    return (category_1, category_2, category_3)
 
 def get_business_attributes(a_list, i_list, span_list, address_list):
-    business_urls = get_business_url(a_list)
-    business_names = get_business_name(a_list)
+    business_urls, business_names = get_business_id(a_list)
     business_ratings = get_business_aggregate_rating(i_list)
     num_reviews = get_num_reviews(span_list)
-    neighborhoods = get_neighborhood(span_list)
+    neighborhood_1, neighborhood_2, neighborhood_3 = get_neighborhoods(span_list)
     business_addresses = get_business_address(address_list)
-    categories = get_business_category(span_list)
+    category_1, category_2, category_3 = get_business_categories(span_list)
 
     return(business_urls,
            business_names,
            business_ratings,
            num_reviews,
-           neighborhoods,
+           neighborhood_1,
+           neighborhood_2,
+           neighborhood_3,
            business_addresses,
-           categories)
+           category_1,
+           category_2,
+           category_3)
 
-def make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories):
+def make_bar_dict(business_urls, business_names, 
+                  business_ratings, num_reviews, 
+                  neighborhood_1, neighborhood_2, neighborhood_3, 
+                  business_addresses, 
+                  category_1, category_2, category_3):
     keys = business_urls
     values = []
     for j in range(len(business_urls)):                                                                                                              
-        values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhoods[j], business_addresses[j], categories[j]])
+        values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhood_1[j], neighborhood_2[j], neighborhood_3[j], business_addresses[j], category_1[j], category_2[j], category_3[j]])
 
     bar_dict = dict(zip(keys, values))
     return(bar_dict)
@@ -116,15 +201,15 @@ def make_bar_dict(business_urls, business_names, business_ratings, num_reviews, 
 def combine_user_reviews(reviews, user_ids, user_locations):
     for j in range(len(user_ids)):
         reviews.append([user_ids[j], user_locations[j]])
-    print reviews
+    #print reviews
     return (reviews)
 
-
+#Need to update arguments 1/25 12pm
 def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories):
     keys = business_urls
     values = []
     for j in range(len(business_urls)):                                                                                                              
-        values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhoods[j], business_addresses[j], categories[j]])
+        values.append([business_names[j], business_ratings[j], num_reviews[j], neighborhood_1[j], neighborhood_2[j], neighborhood_3[j], business_addresses[j], category_1[j], category_2[j], category_3[j]])
     bar_dict_iter = dict(zip(keys, values))
     
     bar_dict.update(bar_dict_iter)
@@ -141,23 +226,25 @@ def get_review_list_marker(browser):
 
 def get_user_id(r_list):
     user_ids = []
+    user_names = []
     a_list = r_list.find_by_tag('a')
     for a in a_list:
         if a['class'] == 'user-display-name':
-            user_ids.append([str(a['href']),a.text])
-    return(user_ids)
+            user_id = {'user_id':str(a['href'])}
+            user_name = {'user_name':a.text}
+            user_ids.append(user_id)
+            user_names.append(user_name)
+    return(user_ids, user_names)
 
 def get_user_location(r_list):
     user_locations = []
     reviews_list = r_list.find_by_tag('li')
     for li in reviews_list:
         if li['class'] == 'user-location':
-            user_locations.append(li.text)
+            user_location = {'user_location':li.text}
+            user_locations.append(user_location)
     return(user_locations)
     
-def update_user_dict(user_dict, business_url, reviews):
-    return (user_dict)
-
 
 ###TODO (1/22/15)  Write scraper for review rating, date and text
 ###Possibly also get more business data such as parking, ambience, noise level, etc.
@@ -170,23 +257,25 @@ def main():
     browser = Browser()
 
     #Go to first page of search results for bars+SF on yelp
-    url = 'http://www.yelp.com/search?find_desc=bars&find_loc=San+Francisco%2C+CA&ns=1'
+    #url = 'http://www.yelp.com/search?find_desc=bars&find_loc=San+Francisco%2C+CA&ns=1'  #General SF bars search
+    url = 'http://www.yelp.com/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA&ns=1#' #North Beach, SF search
     browser.visit(url)
 
     a_list, i_list, span_list, address_list = make_tag_lists(browser)
-    business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(a_list, i_list, span_list, address_list)
-    bar_dict = make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
+    business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3 = get_business_attributes(a_list, i_list, span_list, address_list)
+    bar_dict = make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3)
     #print json.dumps(bar_dict, sort_keys=True, indent=2)
 
     #Go to second page of search results
-    arrow_link = browser.find_link_by_partial_href('/search?find_desc=bars&find_loc=San+Francisco%2C+CA&start=')
+#        arrow_link = browser.find_link_by_partial_href('/search?find_desc=bars&find_loc=San+Francisco%2C+CA&start=') # for general search
+    arrow_link = browser.find_link_by_partial_href('/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA&start') #for north beach
     arrow_link.click()
 
     time.sleep(3) ## Must have time delay here or doesn't work!!!
 
     a_list, i_list, span_list, address_list = make_tag_lists(browser)
-    business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(a_list, i_list, span_list, address_list)
-    bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
+    business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3 = get_business_attributes(a_list, i_list, span_list, address_list)
+    bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3)
 
     #Go to third and subsequent pages of search results
 #    for a in range(2, 3):
@@ -199,11 +288,11 @@ def main():
 #        time.sleep(delay)
 
 #        a_list, i_list, span_list, address_list = make_tag_lists(browser)
-#        business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories = get_business_attributes(a_list, i_list, span_list, address_list)
-#        bar_dict = update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories)
+    #business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3 = get_business_attributes(a_list, i_list, span_list, address_list)
+    #bar_dict = make_bar_dict(business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3)
         #print json.dumps(bar_dict, sort_keys=True, indent=2)
 
-    with open('bars.json', 'w') as outfile:
+    with open('bars_nb_test.json', 'w') as outfile:
         json.dump(bar_dict, outfile, indent=2)
 
     browser.quit()
@@ -229,11 +318,11 @@ def main():
         browser.visit(key)
 
         r_list = get_review_list_marker(browser)
-        user_ids = get_user_id(r_list)
+        user_ids, user_names = get_user_id(r_list)
         user_locations = get_user_location(r_list)
         reviews = combine_user_reviews(reviews, user_ids, user_locations)
         user_dict[key] = reviews
-        with open('user_reviews.json', 'w') as outfile:
+        with open('user_reviews_nb_test.json', 'w') as outfile:
             json.dump(user_dict, outfile, indent=2)
 
         num_reviews_page = len(user_ids)
@@ -255,7 +344,7 @@ def main():
             reviews = combine_user_reviews(reviews, user_ids, user_locations)
             print 'number of reviews in list is ' + str(len(reviews))
             user_dict[key] = reviews
-            with open('user_reviews.json', 'w') as outfile:
+            with open('user_reviews_nb_test.json', 'w') as outfile:
                 json.dump(user_dict, outfile, indent=2)
 
             num_reviews_page = len(user_ids)
@@ -283,7 +372,7 @@ def main():
                     print 'number of reviews in list is ' + str(len(reviews))
                     user_dict[key] = reviews
 
-                    with open('user_reviews.json', 'w') as outfile:
+                    with open('user_reviews_nb_test.json', 'w') as outfile:
                         json.dump(user_dict, outfile, indent=2)
 
             else:
