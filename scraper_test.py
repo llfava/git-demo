@@ -205,7 +205,7 @@ def combine_user_reviews(reviews, user_ids, user_locations):
     return (reviews)
 
 #Need to update arguments 1/25 12pm
-def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhoods, business_addresses, categories):
+def update_bar_dict(bar_dict, business_urls, business_names, business_ratings, num_reviews, neighborhood_1, neighborhood_2, neighborhood_3, business_addresses, category_1, category_2, category_3):
     keys = business_urls
     values = []
     for j in range(len(business_urls)):                                                                                                              
@@ -305,12 +305,13 @@ def main():
         print key
 
         #Check how many reviews there are
-        num_of_reviews = bar_dict[key][2]
-        search = ' reviews'
-        s = re.search("(\d*)" + search, num_of_reviews)
-        number_of_reviews =  int(s.group(1))
+        #print bar_dict
+        num_of_reviews = int(bar_dict[key][2]['bar_num_reviews'])
+        #search = ' reviews'
+        #s = re.search("(\d*)" + search, num_of_reviews)
+        #number_of_reviews =  int(s.group(1))
         
-        print 'Number of reviews for ' + key + 'is ' + str(number_of_reviews)
+        print 'Number of reviews for ' + key + 'is ' + str(num_of_reviews)
 
         reviews = []
 
@@ -327,7 +328,7 @@ def main():
 
         num_reviews_page = len(user_ids)
         print 'Number of reviews on this page is ' + str(num_reviews_page)
-        num_reviews_remaining = number_of_reviews - num_reviews_page
+        num_reviews_remaining = num_of_reviews - num_reviews_page
         print 'Number of reviews remaining after this page is ' + str(num_reviews_remaining)
         
         #Go to second page of search results
@@ -354,6 +355,7 @@ def main():
 
             num_pages = int(round(float(num_reviews_remaining)/40 + 0.5))
 
+            ##Seems like I should use this for second and subsequent pages (1/25 1:45pm)
             #Go to third and subsequent pages of search results
             if num_reviews_remaining > 0:
                 for a in range(2, (num_pages + 2)):
