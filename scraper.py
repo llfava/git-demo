@@ -21,11 +21,13 @@ def parse_bar(url, bar):
 
 def parse_bars():
     bars = {}
-    res = glob.glob("./raw/bars_nb_*.html")
+#    res = glob.glob("./raw/bars_nb_*.html")
+    res = glob.glob("./raw/bars_nb_0.html")
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
         bizes = soup.find_all("a", { "class" : "biz-name" })
+        #print bizes
         for biz in bizes:
           # biz.tex is the bar's URL.  Note that this url does not have www.yelp.com. Need to add that in later
           bars[biz['href']] = {'bar_name' : biz.text,
@@ -41,11 +43,17 @@ def parse_bars():
             "file_name" : biz['href'][5:]  # Skip the first 5 characters, which are: /biz/
          }
 
-        # TODO: Finish this up
-        #bizes = soup.find_all("div", {"class" : "rating-large"})
-        #for biz in bizes:
-        #  print biz
-        #  print
+        bar_ratings = []
+        search = " star rating"
+        bizes = soup.find_all("div", {"class" : "rating-large"})
+        for biz in bizes:
+            #print biz
+            bar_stars = biz.find_all("i")#, {"class": "star-img stars_4"})
+            if len(bar_stars) > 0:
+                for review in bar_stars:
+                    s = re.search("(\S*)" + search, review['title'])
+                    bar_ratings.append(s.group(1))
+        #Need to get this info into the dictionary
         fhandle.close()
     return bars
 
@@ -134,7 +142,7 @@ def main():
     with open('bars_nb.json', 'w') as outfile:
       json.dump(bars, outfile, indent=2)
 
-    if True:
+    if False:
       crawl_reviews(bars)
 
     for bar in bars.keys():
