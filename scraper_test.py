@@ -198,9 +198,9 @@ def make_bar_dict(business_urls, business_names,
     bar_dict = dict(zip(keys, values))
     return(bar_dict)
 
-def combine_user_reviews(reviews, user_ids, user_locations):
+def combine_user_reviews(reviews, user_ids, user_names, user_locations):
     for j in range(len(user_ids)):
-        reviews.append([user_ids[j], user_locations[j]])
+        reviews.append([user_ids[j], user_names[j], user_locations[j]])
     #print reviews
     return (reviews)
 
@@ -321,7 +321,7 @@ def main():
         r_list = get_review_list_marker(browser)
         user_ids, user_names = get_user_id(r_list)
         user_locations = get_user_location(r_list)
-        reviews = combine_user_reviews(reviews, user_ids, user_locations)
+        reviews = combine_user_reviews(reviews, user_ids, user_names, user_locations)
         user_dict[key] = reviews
         with open('user_reviews_nb_test.json', 'w') as outfile:
             json.dump(user_dict, outfile, indent=2)
@@ -340,9 +340,10 @@ def main():
             time.sleep(3) ## Must have time delay here or doesn't work!!!
 
             r_list = get_review_list_marker(browser)
-            user_ids = get_user_id(r_list)
+            user_ids, user_names = get_user_id(r_list)
+            print user_ids
             user_locations = get_user_location(r_list)
-            reviews = combine_user_reviews(reviews, user_ids, user_locations)
+            reviews = combine_user_reviews(reviews, user_ids, user_names, user_locations)
             print 'number of reviews in list is ' + str(len(reviews))
             user_dict[key] = reviews
             with open('user_reviews_nb_test.json', 'w') as outfile:
@@ -361,6 +362,7 @@ def main():
                 for a in range(2, (num_pages + 2)):
                     print a
                     start_num = 40*a
+                    print start_num
                     arrow_link = browser.find_link_by_partial_href(key + '?start=' + str(start_num))
                     arrow_link.click()
 
@@ -368,9 +370,9 @@ def main():
                     time.sleep(delay)
         
                     r_list = get_review_list_marker(browser)
-                    user_ids = get_user_id(r_list)
+                    user_ids, user_names = get_user_id(r_list)
                     user_locations = get_user_location(r_list)
-                    reviews = combine_user_reviews(reviews, user_ids, user_locations)
+                    reviews = combine_user_reviews(reviews, user_ids, user_names, user_locations)
                     print 'number of reviews in list is ' + str(len(reviews))
                     user_dict[key] = reviews
 
