@@ -43,17 +43,33 @@ def parse_bars():
             "file_name" : biz['href'][5:]  # Skip the first 5 characters, which are: /biz/
          }
 
+        #Get bar rating
         bar_ratings = []
         search = " star rating"
         bizes = soup.find_all("div", {"class" : "rating-large"})
         for biz in bizes:
             #print biz
-            bar_stars = biz.find_all("i")#, {"class": "star-img stars_4"})
+            bar_stars = biz.find_all("i")
             if len(bar_stars) > 0:
                 for review in bar_stars:
                     s = re.search("(\S*)" + search, review['title'])
                     bar_ratings.append(s.group(1))
         #Need to get this info into the dictionary
+
+        #Get bar num reviews
+        bar_num_reviews = []
+        search = " reviews"
+        bizes = soup.find_all("div", {"class": "biz-rating biz-rating-large clearfix"})
+        for biz in bizes:
+            bar_n_reviews = biz.find_all("span")
+            for review in bar_n_reviews:
+                s = re.search("(\d*)" + search, review.text)
+                bar_num_reviews.append(s.group(1))
+        #Need to get this info into the dictionary
+
+        #Get neighborhoods
+
+
         fhandle.close()
     return bars
 
