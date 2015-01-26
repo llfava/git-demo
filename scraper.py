@@ -68,8 +68,31 @@ def parse_bars():
         #Need to get this info into the dictionary
 
         #Get neighborhoods
-
-
+        neighborhood_1 = []
+        neighborhood_2 = []
+        neighborhood_3 = []
+        search = ","
+        bizes = soup.find_all("span", {"neighborhood-str-list"})
+        for biz in bizes:
+            print biz.text
+            s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", biz.text)
+            s2 = re.search("(.*)" + search + "(.*)", biz.text)
+            if s1:
+                hood_1 = s1.group(1)
+                hood_2 = s1.group(2)
+                hood_3 = s1.group(3)
+            elif s2:
+                hood_1 = s2.group(1)
+                hood_2 = s2.group(2)
+                hood_3 = 'none'
+            else:
+                hood_1 = biz.text
+                hood_2 = 'none'
+                hood_3 = 'none'
+            neighborhood_1.append(hood_1)
+            neighborhood_2.append(hood_2)
+            neighborhood_3.append(hood_3)
+        #Need to get this info into the dictionary
         fhandle.close()
     return bars
 
