@@ -219,6 +219,7 @@ def main():
     if False:
         crawl_reviews(bars)
 
+        #Need to loop over pages
     if True:
         for url in bars:
           reviews = parse_reviews(url, bars[url])
