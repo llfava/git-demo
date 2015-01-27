@@ -22,14 +22,27 @@ def parse_reviews(url, bar):
             user_info = review.find_all("a", {"class": "user-display-name"})
             user_id =  user_info[0]['href'][21:] #Skip the first 14 characters, which are: /user_details?
             user_name = user_info[0].text
+
+            user_location = review.find_all("li", {"class": "user-location"})
+            
+            review_content = review.find_all("div", {"class": "review-content"})
+            user_review = review_content[0].find_all('p', {"itemprop": "description"})
+            review_text = ("%s" % user_review[0]).replace('<br/>', ' ').replace('<p itemprop=\"description\" lang=\"en\">', '').replace('</p>', '').strip()
+
+            date = review_content[0].find_all("meta", {"itemprop": "datePublished"})
+            review_date = date[0]['content']
+
+            search = " star rating"
+            user_stars = review_content[0].find("i")#, {"class" : "rating-very-large"})
+            s = re.search("(\S*)" + search, user_stars['title'])
+            user_rating = float(s.group(1))
+           
             bar_reviews[user_id] = {'user_name' : user_name,
-                                                      "user_location": None,
-                                                      "user_rating": None,
-                                                      "review_date": None,
-                                                      "review_text": None,
-                                                      }
-            return bar_reviews
-        print json.dumps(bar_reviews, indent=2)
+                                    "user_location": user_location[0].text.strip(),
+                                    "user_rating": user_rating,
+                                    "review_date": review_date,
+                                    "review_text": review_text 
+                                    }
         fhandle.close()
         return bar_reviews
 
