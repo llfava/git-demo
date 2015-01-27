@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 
 def parse_reviews(url, bar):
     bar_reviews= {}
-    
 #    res = glob.glob("./raw/the-boardroom-francisco_9.html")
     res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
     for fname in res:
@@ -137,7 +136,7 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
     return bars
 
 def crawl_reviews(bars):
-    limit = 20
+    limit = 50 #1/27 formerly 20 page limit
     base_dir = "./raw/"
     for (bar_num,url) in enumerate(bars.keys()):
       start_page = len(glob.glob('./raw/' + bars[url]['file_name'] + '*')) + 1
@@ -217,16 +216,16 @@ def main():
         url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
         crawl("./raw/bars_nb_%d.html", url, 10)
 
-    if True:
+    if False:
         bars = parse_bars()
         with open('./processed/bars_nb.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
-    if False:
+    if True:
         crawl_reviews(bars)
 
         #Need to loop over pages
-    if True:
+    if False:
         for url in bars:
             reviews = parse_reviews(url, bars[url])
 
