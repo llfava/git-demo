@@ -10,23 +10,37 @@ import splinter
 from splinter import Browser
 from bs4 import BeautifulSoup
 
-def parse_bar(url, bar):
-    print bar['file_name']
-    res = glob.glob("./raw/" + bar['file_name'] + "*.html")
+#def parse_reviews(url, bar):
+def parse_reviews():
+    bar_reviews= {}
+#    print bar['file_name']
+#    print bar['the-boardroom-san-francisco']
+#    res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
+    filename = 'the-boardroom-san-francisco'
+    res = glob.glob("./raw/" + filename + "_1.html")
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
-        # TODO: Parse this bar's reviews
+        user_reviews = soup.find_all("div", {"class": "review review--with-sidebar"})
+        for review in user_reviews:
+            user_info = review.find_all("a", {"class": "user-display-name"})
+            user_id =  user_info[0]['href'][14:] #Skip the first 14 characters, which are: /user_details?
+            user_name = user_info[0].text
+        #TODO 1/26 9:48 This is giving a key error
+        bar_reviews['/biz/' + filename]['user_id'] = {'user_name' : user_name,
+                                                      "user_location": None,
+                                                      "user_rating": None,
+                                                      "review_date": None,
+                                                      "review_text": None,
+                                                      }
+        print bar_reviews
+
         fhandle.close()
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
     res = glob.glob("./raw/bars_nb_*.html")
 #    res = glob.glob("./raw/bars_nb_0.html") # for testing
-
-####To keep results within search results and no ads, want to use 
-#div class "search-result natural-search-result" maybe use datakey to build up dictionary all together
-
 
     for fname in res:
         fhandle = open(fname, 'r')
@@ -188,19 +202,27 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
 
 def main():
     if False:  # Set this to True or False depending on whether we want to crawl bars
-      url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
-      crawl("./raw/bars_nb_%d.html", url, 10)
-
-    bars = parse_bars()
-    with open('bars_nb.json', 'w') as outfile:
-      json.dump(bars, outfile, indent=2)
+        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
+        crawl("./raw/bars_nb_%d.html", url, 10)
 
     if False:
-      crawl_reviews(bars)
+        bars = parse_bars()
+        with open('bars_nb.json', 'w') as outfile:
+            json.dump(bars, outfile, indent=2)
 
-    for bar in bars.keys():
+    if False:
+        crawl_reviews(bars)
+
+    if True:
+        reviews = parse_reviews()
+        with open('user_reviews_nb.json', 'w') as outfile:
+            json.dump(reviews, outfile, indent=2)
+
+
+
+#    for bar in bars.keys():
       #parse_bar(bar, bars[bar])
-      break
+#      break
 
 if __name__ == "__main__":
     main()
