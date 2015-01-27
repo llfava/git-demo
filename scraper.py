@@ -10,32 +10,28 @@ import splinter
 from splinter import Browser
 from bs4 import BeautifulSoup
 
-#def parse_reviews(url, bar):
-def parse_reviews():
+def parse_reviews(url, bar):
     bar_reviews= {}
-#    print bar['file_name']
-#    print bar['the-boardroom-san-francisco']
-#    res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
-    filename = 'the-boardroom-san-francisco'
-    res = glob.glob("./raw/" + filename + "_1.html")
+    res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
+        #check to make sure this won't capture ad reviews
         user_reviews = soup.find_all("div", {"class": "review review--with-sidebar"})
         for review in user_reviews:
             user_info = review.find_all("a", {"class": "user-display-name"})
-            user_id =  user_info[0]['href'][14:] #Skip the first 14 characters, which are: /user_details?
+            user_id =  user_info[0]['href'][21:] #Skip the first 14 characters, which are: /user_details?
             user_name = user_info[0].text
-        #TODO 1/26 9:48 This is giving a key error
-        bar_reviews['/biz/' + filename]['user_id'] = {'user_name' : user_name,
+            bar_reviews[user_id] = {'user_name' : user_name,
                                                       "user_location": None,
                                                       "user_rating": None,
                                                       "review_date": None,
                                                       "review_text": None,
                                                       }
-        print bar_reviews
-
+            return bar_reviews
+        print json.dumps(bar_reviews, indent=2)
         fhandle.close()
+        return bar_reviews
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
@@ -93,12 +89,12 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
                 s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", cat.text)
                 s2 = re.search("(.*)" + search + "(.*)", cat.text)
                 if s1:
-                    cat_1 = s1.group(1)
-                    cat_2 = s1.group(2)
-                    cat_3 = s1.group(3)
+                    cat_1 = s1.group(1).strip()
+                    cat_2 = s1.group(2).strip()
+                    cat_3 = s1.group(3).strip()
                 elif s2:
-                    cat_1 = s2.group(1)
-                    cat_2 = s2.group(2)
+                    cat_1 = s2.group(1).strip()
+                    cat_2 = s2.group(2).strip()
                     cat_3 = 'none'
                 else:
                     cat_1 = cat.text.strip()
@@ -202,24 +198,19 @@ def main():
         url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
         crawl("./raw/bars_nb_%d.html", url, 10)
 
-    if False:
+    if True:
         bars = parse_bars()
-        with open('bars_nb.json', 'w') as outfile:
+        with open('./processed/bars_nb.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
     if False:
         crawl_reviews(bars)
 
     if True:
-        reviews = parse_reviews()
-        with open('user_reviews_nb.json', 'w') as outfile:
-            json.dump(reviews, outfile, indent=2)
-
-
-
-#    for bar in bars.keys():
-      #parse_bar(bar, bars[bar])
-#      break
+        for url in bars:
+          reviews = parse_reviews(url, bars[url])
+          with open('./processed/%s_nb.json' % bars[url]['file_name'], 'w') as outfile:
+              json.dump(reviews, outfile, indent=2)
 
 if __name__ == "__main__":
     main()
