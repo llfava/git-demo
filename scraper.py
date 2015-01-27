@@ -19,10 +19,10 @@ def parse_bar(url, bar):
         # TODO: Parse this bar's reviews
         fhandle.close()
 
-def parse_bars():
+def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
-#    res = glob.glob("./raw/bars_nb_*.html")
-    res = glob.glob("./raw/bars_nb_0.html")
+    res = glob.glob("./raw/bars_nb_*.html")
+#    res = glob.glob("./raw/bars_nb_0.html") # for testing
 
 ####To keep results within search results and no ads, want to use 
 #div class "search-result natural-search-result" maybe use datakey to build up dictionary all together
@@ -44,7 +44,7 @@ def parse_bars():
                 s = re.search("(\S*)" + search, bar_star['title'])
                 bar_rating = s.group(1)
 
-            search = " reviews"
+            search = " review"
             biz_num_reviews = result.find_all("div", {"class": "biz-rating biz-rating-large clearfix"})
             for biz_num in biz_num_reviews:
                 bar_n_review = biz_num.find_all("span")
@@ -68,9 +68,31 @@ def parse_bars():
                     hood_1 = hood.text
                     hood_2 = 'none'
                     hood_3 = 'none'
-
+                    
+            #TODO 1/26 8:17 pm: Search not working, need to change <br> to space
             search = "/n"
+            biz_address = result.find_all("address")
+            bar_address =  biz_address[0].text
+            #s = re.search("(.*)" + search + "(.*)", biz_address[0].text)
+            #print s
 
+            search = ","
+            biz_cats = result.find_all("span", {"category-str-list"})
+            for cat in biz_cats:
+                s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", cat.text)
+                s2 = re.search("(.*)" + search + "(.*)", cat.text)
+                if s1:
+                    cat_1 = s1.group(1)
+                    cat_2 = s1.group(2)
+                    cat_3 = s1.group(3)
+                elif s2:
+                    cat_1 = s2.group(1)
+                    cat_2 = s2.group(2)
+                    cat_3 = 'none'
+                else:
+                    cat_1 = cat.text
+                    cat_2 = 'none'
+                    cat_3 = 'none'
 
             bars[biz_id['href']] = {'bar_name' : biz_id.text,
                                      "bar_rating": bar_rating,
@@ -78,20 +100,12 @@ def parse_bars():
                                      "bar_neighborhood_1": hood_1,
                                      "bar_neighborhood_2": hood_2,
                                      "bar_neighborhood_3": hood_3,
-                                     "bar_address": None,
-                                     "bar_category_1": None,
-                                     "bar_category_2": None,
-                                     "bar_category_3": None,
+                                     "bar_address": bar_address,
+                                     "bar_category_1": cat_1,
+                                     "bar_category_2": cat_2,
+                                     "bar_category_3": cat_3,
                                      "file_name" : biz_id['href'][5:]  # Skip the first 5 characters, which are: /biz/
                                      }
-
-        #for key in bars.keys():
-        #    print bars[key]
-
-
-
-
-
 
         fhandle.close()
     return bars
