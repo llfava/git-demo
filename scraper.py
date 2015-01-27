@@ -12,11 +12,13 @@ from bs4 import BeautifulSoup
 
 def parse_reviews(url, bar):
     bar_reviews= {}
+    
+#    res = glob.glob("./raw/the-boardroom-francisco_9.html")
     res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
-        #check to make sure this won't capture ad reviews
+        #check to make sure this won't capture ad reviews - 1/27 As far as I can tell, it does not
         user_reviews = soup.find_all("div", {"class": "review review--with-sidebar"})
         for review in user_reviews:
             user_info = review.find_all("a", {"class": "user-display-name"})
@@ -44,7 +46,11 @@ def parse_reviews(url, bar):
                                     "review_text": review_text 
                                     }
         fhandle.close()
-        return bar_reviews
+    with open('./processed/%s_nb.json' % bar['file_name'], 'w') as outfile:
+        json.dump(bar_reviews, outfile, indent=2)
+    print 'saved ' + bar['file_name']+ '.json file'
+
+    return bar_reviews
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
@@ -222,9 +228,7 @@ def main():
         #Need to loop over pages
     if True:
         for url in bars:
-          reviews = parse_reviews(url, bars[url])
-          with open('./processed/%s_nb.json' % bars[url]['file_name'], 'w') as outfile:
-              json.dump(reviews, outfile, indent=2)
+            reviews = parse_reviews(url, bars[url])
 
 if __name__ == "__main__":
     main()
