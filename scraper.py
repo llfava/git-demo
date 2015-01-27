@@ -23,76 +23,76 @@ def parse_bars():
     bars = {}
 #    res = glob.glob("./raw/bars_nb_*.html")
     res = glob.glob("./raw/bars_nb_0.html")
+
+####To keep results within search results and no ads, want to use 
+#div class "search-result natural-search-result" maybe use datakey to build up dictionary all together
+
+
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
-        bizes = soup.find_all("a", { "class" : "biz-name" })
-        #print bizes
-        for biz in bizes:
-          # biz.tex is the bar's URL.  Note that this url does not have www.yelp.com. Need to add that in later
-          bars[biz['href']] = {'bar_name' : biz.text,
-            "bar_rating": None,
-            "bar_num_reviews": None,
-            "bar_neighborhood_1": None,
-            "bar_neighborhood_2": None,
-            "bar_neighborhood_3": None,
-            "bar_address": None,
-            "bar_category_1": None,
-            "bar_category_2": None,
-            "bar_category_3": None,
-            "file_name" : biz['href'][5:]  # Skip the first 5 characters, which are: /biz/
-         }
+        search_results = soup.find_all("div", {"class": "search-result natural-search-result"})
+        #print search_results[0]['data-key']
+        for result in search_results:
+            biz_id = result.find("a", { "class" : "biz-name" })
+                #biz.tex is the bar's URL.  Note that this url does not have www.yelp.com. Need to add that in later
 
-        #Get bar rating
-        bar_ratings = []
-        search = " star rating"
-        bizes = soup.find_all("div", {"class" : "rating-large"})
-        for biz in bizes:
-            #print biz
-            bar_stars = biz.find_all("i")
-            if len(bar_stars) > 0:
-                for review in bar_stars:
-                    s = re.search("(\S*)" + search, review['title'])
-                    bar_ratings.append(s.group(1))
-        #Need to get this info into the dictionary
+            search = " star rating"
+            biz_stars = result.find_all("div", {"class" : "rating-large"})
+            for biz_star in biz_stars:
+                bar_star = biz_star.find("i")
+                s = re.search("(\S*)" + search, bar_star['title'])
+                bar_rating = s.group(1)
 
-        #Get bar num reviews
-        bar_num_reviews = []
-        search = " reviews"
-        bizes = soup.find_all("div", {"class": "biz-rating biz-rating-large clearfix"})
-        for biz in bizes:
-            bar_n_reviews = biz.find_all("span")
-            for review in bar_n_reviews:
-                s = re.search("(\d*)" + search, review.text)
-                bar_num_reviews.append(s.group(1))
-        #Need to get this info into the dictionary
+            search = " reviews"
+            biz_num_reviews = result.find_all("div", {"class": "biz-rating biz-rating-large clearfix"})
+            for biz_num in biz_num_reviews:
+                bar_n_review = biz_num.find_all("span")
+                s = re.search("(\d*)" + search, bar_n_review[0].text)
+                bar_num_reviews = s.group(1)
 
-        #Get neighborhoods
-        neighborhood_1 = []
-        neighborhood_2 = []
-        neighborhood_3 = []
-        search = ","
-        bizes = soup.find_all("span", {"neighborhood-str-list"})
-        for biz in bizes:
-            print biz.text
-            s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", biz.text)
-            s2 = re.search("(.*)" + search + "(.*)", biz.text)
-            if s1:
-                hood_1 = s1.group(1)
-                hood_2 = s1.group(2)
-                hood_3 = s1.group(3)
-            elif s2:
-                hood_1 = s2.group(1)
-                hood_2 = s2.group(2)
-                hood_3 = 'none'
-            else:
-                hood_1 = biz.text
-                hood_2 = 'none'
-                hood_3 = 'none'
-            neighborhood_1.append(hood_1)
-            neighborhood_2.append(hood_2)
-            neighborhood_3.append(hood_3)
-        #Need to get this info into the dictionary
+            search = ","
+            biz_hoods = result.find_all("span", {"neighborhood-str-list"})
+            for hood in biz_hoods:
+                s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", hood.text)
+                s2 = re.search("(.*)" + search + "(.*)", hood.text)
+                if s1:
+                    hood_1 = s1.group(1)
+                    hood_2 = s1.group(2)
+                    hood_3 = s1.group(3)
+                elif s2:
+                    hood_1 = s2.group(1)
+                    hood_2 = s2.group(2)
+                    hood_3 = 'none'
+                else:
+                    hood_1 = hood.text
+                    hood_2 = 'none'
+                    hood_3 = 'none'
+
+            search = "/n"
+
+
+            bars[biz_id['href']] = {'bar_name' : biz_id.text,
+                                     "bar_rating": bar_rating,
+                                     "bar_num_reviews": bar_num_reviews,
+                                     "bar_neighborhood_1": hood_1,
+                                     "bar_neighborhood_2": hood_2,
+                                     "bar_neighborhood_3": hood_3,
+                                     "bar_address": None,
+                                     "bar_category_1": None,
+                                     "bar_category_2": None,
+                                     "bar_category_3": None,
+                                     "file_name" : biz_id['href'][5:]  # Skip the first 5 characters, which are: /biz/
+                                     }
+
+        #for key in bars.keys():
+        #    print bars[key]
+
+
+
+
+
+
         fhandle.close()
     return bars
 
