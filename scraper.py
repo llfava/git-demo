@@ -40,7 +40,7 @@ def parse_reviews():
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
     res = glob.glob("./raw/bars_nb_*.html")
-#    res = glob.glob("./raw/bars_nb_0.html") # for testing
+#    res = glob.glob("./raw/bars_nb_1.html") # for testing
 
     for fname in res:
         fhandle = open(fname, 'r')
@@ -56,14 +56,14 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
             for biz_star in biz_stars:
                 bar_star = biz_star.find("i")
                 s = re.search("(\S*)" + search, bar_star['title'])
-                bar_rating = s.group(1)
+                bar_rating = float(s.group(1))
 
             search = " review"
             biz_num_reviews = result.find_all("div", {"class": "biz-rating biz-rating-large clearfix"})
             for biz_num in biz_num_reviews:
                 bar_n_review = biz_num.find_all("span")
                 s = re.search("(\d*)" + search, bar_n_review[0].text)
-                bar_num_reviews = s.group(1)
+                bar_num_reviews = int(s.group(1))
 
             search = ","
             biz_hoods = result.find_all("span", {"neighborhood-str-list"})
@@ -71,24 +71,21 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
                 s1 = re.search("(.*)" + search + "(.*)" + search + "(.*)", hood.text)
                 s2 = re.search("(.*)" + search + "(.*)", hood.text)
                 if s1:
-                    hood_1 = s1.group(1)
-                    hood_2 = s1.group(2)
-                    hood_3 = s1.group(3)
+                    hood_1 = s1.group(1).strip()
+                    hood_2 = s1.group(2).strip()
+                    hood_3 = s1.group(3).strip()
                 elif s2:
-                    hood_1 = s2.group(1)
-                    hood_2 = s2.group(2)
+                    hood_1 = s2.group(1).strip()
+                    hood_2 = s2.group(2).strip()
                     hood_3 = 'none'
                 else:
-                    hood_1 = hood.text
+                    hood_1 = hood.text.strip()
                     hood_2 = 'none'
                     hood_3 = 'none'
                     
-            #TODO 1/26 8:17 pm: Search not working, need to change <br> to space
             search = "/n"
             biz_address = result.find_all("address")
-            bar_address =  biz_address[0].text
-            #s = re.search("(.*)" + search + "(.*)", biz_address[0].text)
-            #print s
+            bar_address =  ("%s" % biz_address[0]).replace('<br/>', ', ').replace('<address>', '').replace('</address>', '').strip()
 
             search = ","
             biz_cats = result.find_all("span", {"category-str-list"})
@@ -104,7 +101,7 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
                     cat_2 = s2.group(2)
                     cat_3 = 'none'
                 else:
-                    cat_1 = cat.text
+                    cat_1 = cat.text.strip()
                     cat_2 = 'none'
                     cat_3 = 'none'
 
