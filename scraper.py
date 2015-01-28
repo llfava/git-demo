@@ -216,16 +216,16 @@ def main():
         url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
         crawl("./raw/bars_nb_%d.html", url, 10)
 
-    if False:
+    if True:
         bars = parse_bars()
         with open('./processed/bars_nb.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
-    if True:
+    if False:
         crawl_reviews(bars)
 
         #Need to loop over pages
-    if False:
+    if True:
         for url in bars:
             reviews = parse_reviews(url, bars[url])
 
