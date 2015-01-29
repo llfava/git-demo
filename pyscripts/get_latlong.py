@@ -16,30 +16,29 @@ def main():
     bar_reviews = {}
     search = "San Francisco, CA"
     timeout = 60
+    bad_key = []
 
-    s = re.search("(.*)" + search, bar_dict['/biz/scomas-restaurant-san-francisco-3']['bar_address'])
-    address = s.group(1) + search
-    try:
-        location = geolocator.geocode(address, timeout = timeout)
-    except AttributeError:
-        print 'Address not valid.'
-
-
-    if False:
+    if True:
         for key in bar_dict:
             s = re.search("(.*)" + search, bar_dict[key]['bar_address'])
             address = s.group(1) + search
             try:
                 location = geolocator.geocode(address, timeout = timeout)
-            except AttributeError:
-                print 'Address not valid.'
-#            sys.stdout.write('Address not valid.  Removing %s\n' % bar_dict[key]['bar_name'])
-#            del bar_dict[key]
-            else:
                 print address
                 print (location.latitude, location.longitude)
                 bar_dict[key]['lat'] = location.latitude
                 bar_dict[key]['long'] = location.longitude
+            except AttributeError:
+                sys.stdout.write('Address not valid.  Removing %s\n' % bar_dict[key]['bar_name'])
+                bad_key.append(key)
+            except geopy.exc.GeocoderTimedOut:
+                sys.stdout.write('Geocoder timed out.  Removing %s\n' % bar_dict[key]['bar_name'])
+                bad_key.append(key)
+                continue
+
+        for key in bad_key:
+            del bar_dict[key]
+
 
     with open('../processed/bars_nb_latlong.json', 'w') as outfile:
         json.dump(bar_dict, outfile, indent=2)
