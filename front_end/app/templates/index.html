@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>{{title}} - LocalFinder</title>
+    <title>{{title}} - LocalFeel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Local Bar Finder</a>
+          <a class="navbar-brand" href="#">LocalFeel</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -55,8 +55,8 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Local Bar Finder</h1>
-        <p class="lead">Find out which nearby bars have a more local or touristy feel.</p>
+        <h1>LocalFeel</h1>
+        <p class="lead">New to town?  LocalFeel helps you find the places locals love.</p>
 	  <h3>Find a bar near</h3>
 	    <form action="/return_page" method="GET">
               <input type="text" name="address">
@@ -65,11 +65,7 @@
 	</br></br>
 
       </div>
-    <table class="table table-hover">
-    <tr><th>Bar</th><th>Category</th><th>Address</th><th>Yelp Rating</th><th>Local Rating</th></tr>
-    {% for city in cities %}
-    <tr><td>{{ city['name'] }}</td><td>{{ city['country']}}</td><td> {{ city['population'] }}</td></tr>
-    {% endfor %}
+
     </table>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
