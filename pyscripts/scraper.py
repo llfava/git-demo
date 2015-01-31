@@ -53,7 +53,7 @@ def parse_reviews(url, bar):
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
-    res = glob.glob("./raw/bars_nb_*.html")
+    res = glob.glob("./raw/bars_wa_*.html")
 #    res = glob.glob("./raw/bars_nb_1.html") # for testing
 
     for fname in res:
@@ -212,16 +212,17 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
     browser.quit()
 
 def main():
-    if False:  # Set this to True or False depending on whether we want to crawl bars
-        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA'
-        crawl("./raw/bars_nb_%d.html", url, 10)
+    if True:  # Set this to True or False depending on whether we want to crawl bars
+#        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA' #North Beach 'nb'
+        url = '/search?find_desc=bars&find_loc=SF&ns=1#find_loc=Western+Addition,+San+Francisco,+CA' #Western Addition 'wa'
+        crawl("./raw/bars_wa_%d.html", url, 10)
 
     if True:
         bars = parse_bars()
-        with open('./processed/bars_nb.json', 'w') as outfile:
+        with open('./processed/bars_wa.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
-    if False:
+    if True:
         crawl_reviews(bars)
 
         #Need to loop over pages
