@@ -1,0 +1,49 @@
+This document describes the work flow for LocalFeel.
+Last updated: 1/31/2015
+
+~/git-demo/pyscripts/
+###Data Collection###
+1) scraper.py
+This crawls the search results for a given Yelp search (for bars), parses the saved raw 
+html files and generates a bars_**.json files, where ** stands for neighborhood code. 
+Then the reviews for each bar are crawled and saved then parsed generating a single json 
+of review-level information for each bar.
+
+2) get_latlong.py
+This script takes as input the bars_**.json and finds the latitude and longitude 
+coordinates for each bar, returning bars_**_latlong.json
+
+###Cleaning and Analysis###
+3) prelim_analysis.ipynb
+Currently, this notebook takes as input the bars_**_latlong.json and the associated 
+<bar-name>.json files and rates the bars on a scale from 1 - 5 based on the ratio of SF 
+reviews to nonSF reviews for the bar.  This analysis will not be used in the final 
+product.  This outputs the file bars_**_rated_prelim.json.  The notebook also eliminates
+any bars that do not have their complete set of reviews and any bars with fewer than 10
+reviews.
+
+4) prelim_analysis-2.ipynb
+This notebook takes as input bars_**_latlong.json and the associated <bar-name>.json 
+files and evaluates the localness of the bars based on the ave rating by SF reviewers
+versus the average rating by nonSF reviewers, dividing the bars into three categories:
+local, neutral, touristy.  This is the starting point for the true analysis.  
+
+###Create database###
+5) populate_bars_nb.py
+This script takes as input bars_**_rated_prelim.json and populates a PostgreSQL
+database called bars_nb.
+
+
+~/git-demo/front_end/app/
+###Build App###
+6) views.py
+This scripts describes functions that can be called on each page of the app.  It 
+connects the PostgreSQL database to the app, as well as describes what should be 
+returned when buttons are pushed.
+
+~/git-demo/front_end/app/templates
+7)index.html
+This is the content of the home page of the app LocalFeel.
+
+8)return_page.html
+This is the content of the search results page for LocalFeel.
