@@ -12,8 +12,8 @@ from bs4 import BeautifulSoup
 
 def parse_reviews(url, bar):
     bar_reviews= {}
-#    res = glob.glob("./raw/the-boardroom-francisco_9.html")
-    res = glob.glob("./raw/" + bar['file_name'] + "_*.html")
+#    res = glob.glob("../raw/the-boardroom-francisco_9.html")
+    res = glob.glob("../raw/" + bar['file_name'] + "_*.html")
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
@@ -53,8 +53,8 @@ def parse_reviews(url, bar):
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
-    res = glob.glob("./raw/bars_wa_*.html")
-#    res = glob.glob("./raw/bars_nb_1.html") # for testing
+    res = glob.glob("../raw/bars_wa_*.html")
+#    res = glob.glob("../raw/bars_nb_1.html") # for testing
 
     for fname in res:
         fhandle = open(fname, 'r')
@@ -139,12 +139,12 @@ def crawl_reviews(bars):
     limit = 50 #1/27 formerly 20 page limit
     base_dir = "./raw/"
     for (bar_num,url) in enumerate(bars.keys()):
-      start_page = len(glob.glob('./raw/' + bars[url]['file_name'] + '*')) + 1
+      start_page = len(glob.glob('../raw/' + bars[url]['file_name'] + '*')) + 1
       if start_page >= limit: # Limit the number of pages of reviews per bar
         print "Limiting %s to %d pages of reviews" % (url, limit)
         continue
       print "Crawling %s starting from page %d" % (url, start_page)
-      crawl("./raw/" + bars[url]['file_name'] + "_%d.html", url, 40, start_page=start_page)
+      crawl("../raw/" + bars[url]['file_name'] + "_%d.html", url, 40, start_page=start_page)
       # When we return from crawl, its likely that yelp cut of off, and we haven't gotten all the data yet
       # for a given bar, lets just more onto the next bar
 
@@ -215,11 +215,11 @@ def main():
     if True:  # Set this to True or False depending on whether we want to crawl bars
 #        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA' #North Beach 'nb'
         url = '/search?find_desc=bars&find_loc=SF&ns=1#find_loc=Western+Addition,+San+Francisco,+CA' #Western Addition 'wa'
-        crawl("./raw/bars_wa_%d.html", url, 10)
+        crawl("../raw/bars_wa_%d.html", url, 10)
 
     if True:
         bars = parse_bars()
-        with open('./processed/bars_wa.json', 'w') as outfile:
+        with open('../processed/bars_wa.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
     if True:
