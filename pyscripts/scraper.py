@@ -23,7 +23,6 @@ def parse_reviews(url, bar):
         user_reviews = soup.find_all("div", {"class": "review review--with-sidebar"})
         for review in user_reviews:
             user_info = review.find_all("a", {"class": "user-display-name"})
-            print user_info
             try:
                 user_id =  user_info[0]['href'][21:] #Skip the first 14 characters, which are: /user_details?
                 user_name = user_info[0].text
@@ -52,7 +51,7 @@ def parse_reviews(url, bar):
                                     "review_text": review_text 
                                     }
         fhandle.close()
-    with open('../processed/%s_wa.json' % bar['file_name'], 'w') as outfile:
+    with open('../processed/%s_nb.json' % bar['file_name'], 'w') as outfile:
         json.dump(bar_reviews, outfile, indent=2)
     print 'saved ' + bar['file_name']+ '.json file'
 
@@ -60,7 +59,7 @@ def parse_reviews(url, bar):
 
 def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
     bars = {}
-    res = glob.glob("../raw/bars_wa_*.html")
+    res = glob.glob("../raw/bars_nb_*.html")
 #    res = glob.glob("../raw/bars_nb_1.html") # for testing
 
     for fname in res:
@@ -230,7 +229,7 @@ def main():
 
     if True:
         bars = parse_bars()
-        with open('../processed/bars_wa.json', 'w') as outfile:
+        with open('../processed/bars_nb.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
     if False:
