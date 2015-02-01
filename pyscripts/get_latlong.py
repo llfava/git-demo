@@ -10,7 +10,7 @@ def main():
 
     geolocator = Nominatim()
 
-    json_bars = '../processed/bars_nb.json'
+    json_bars = '../processed/bars_wa.json'
     bar_dict = json.loads(open(json_bars).read())
 
     bar_reviews = {}
@@ -40,7 +40,7 @@ def main():
             del bar_dict[key]
 
 
-    with open('../processed/bars_nb_latlong.json', 'w') as outfile:
+    with open('../processed/bars_wa_latlong.json', 'w') as outfile:
         json.dump(bar_dict, outfile, indent=2)
 
 
