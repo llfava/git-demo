@@ -34,19 +34,19 @@ def return_page():
       radius = 1000.0 # meters
       cur = db.cursor()
       q = "SELECT bar_name, bar_category_1, bar_address, bar_rating, local_rating, ST_DWithin(ST_GeogFromText('POINT\
-(' || long || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s) FROM bars_nb LIMIT 5;"
+(' || long || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s) FROM bars_nb;"# LIMIT 5;"
       cur.execute(q, (lon, lati, radius))
       query_results = cur.fetchall()
-      inside = []
       keys = ['bar_name', 'bar_category_1', 'bar_address', 'bar_rating', 'local_rating']
+      inside = []
       for bar in query_results:
         if bar[5] == True:
             inside.append(dict(zip(keys, bar)))
 
 #   json_bars = os.path.dirname(os.path.realpath(__file__))+'/bars_nb.json'
 #   bar_dict = json.loads(open(json_bars).read())
-   return_vals = {'key':'value'} #Need to make this real
-   return render_template("return_page.html", data=inside, )
+   #return_vals = {'key':'value'} #Need to make this real
+   return render_template("return_page.html", data=inside)
 
 
 
