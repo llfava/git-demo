@@ -1,6 +1,9 @@
 #!/usr/bin/python
 import sys
 import nltk
+import json
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def text2pos(string):
     """
@@ -191,8 +194,63 @@ def text2lemmas(string):
 
     return lemmas
 
+def create_corpus(bars):
+  root = "../processed/"
+  total_reviews = 0
+  local_reviews = 0
+  tourist_reviews = 0
+  fh_local = open(root + 'corpus_local.txt', 'w')
+  fh_tourist = open(root + 'corpus_tourist.txt', 'w')
+  for bar in bars:
+    print bar
+    reviews = json.loads(open(root + bars[bar]['file_name'] + '_nb.json').read())
+    for reviewer in reviews:
+      if reviews[reviewer]['user_location'] == 'San Francisco, CA':
+        local_reviews += 1
+        try:
+          fh_local.write(reviews[reviewer]['review_text'].encode('utf8') + '\n')
+        except UnicodeEncodeError:
+          print bar
+          print reviewer
+      else:
+        tourist_reviews += 1
+        try:
+          fh_tourist.write(reviews[reviewer]['review_text'].encode('utf8') + '\n')
+        except UnicodeEncodeError:
+          print bar
+          print reviewer
+      #print reviews[reviewer]['review_text']
+      total_reviews += 1
+      #print reviewer
+  fh_local.close()
+  fh_tourist.close()
+  print total_reviews
+  print local_reviews
+  print tourist_reviews
 
 def main(argv):
+  root = "../processed/"
+
+  json_bars = root + 'bars_nb_rated_prelim.json'
+  bars = json.loads(open(json_bars).read())
+  if False:
+    create_corpus(bars) 
+
+  fh_local = open(root + 'corpus_local_tiny.txt', 'r')
+  fh_tourist = open(root + 'corpus_tourist_tiny.txt', 'r')
+  tfidf = TfidfVectorizer(tokenizer=text2lemmas)
+  tfs = tfidf.fit_transform(fh_local)
+  response = tfidf.transform(fh_tourist)
+  print response
+  print
+  print response.nonzero()
+  feature_names = tfidf.get_feature_names()
+  #print feature_names
+  #for col in response.nonzero()[1]:
+  #  print feature_names[col], ' - ', response[0, col]
+  
+  return 0
+
   reviews = { 'local' : [], 'tourist' : [] }
   lemmas_per_review = { 'local' : [], 'tourist' : [] }
 
