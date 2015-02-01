@@ -12,18 +12,25 @@ from bs4 import BeautifulSoup
 
 def parse_reviews(url, bar):
     bar_reviews= {}
+    ghost_id = 0
 #    res = glob.glob("../raw/the-boardroom-francisco_9.html")
     res = glob.glob("../raw/" + bar['file_name'] + "_*.html")
     for fname in res:
+        print 'Now parsing ' + fname
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
         #check to make sure this won't capture ad reviews - 1/27 As far as I can tell, it does not
         user_reviews = soup.find_all("div", {"class": "review review--with-sidebar"})
         for review in user_reviews:
             user_info = review.find_all("a", {"class": "user-display-name"})
-            user_id =  user_info[0]['href'][21:] #Skip the first 14 characters, which are: /user_details?
-            user_name = user_info[0].text
-
+            print user_info
+            try:
+                user_id =  user_info[0]['href'][21:] #Skip the first 14 characters, which are: /user_details?
+                user_name = user_info[0].text
+            except IndexError:
+                ghost_id += 1
+                user_id = 'ghost_id_%d' % (ghost_id) 
+                user_name = 'ghost_user'
             user_location = review.find_all("li", {"class": "user-location"})
             
             review_content = review.find_all("div", {"class": "review-content"})
@@ -45,7 +52,7 @@ def parse_reviews(url, bar):
                                     "review_text": review_text 
                                     }
         fhandle.close()
-    with open('./processed/%s_nb.json' % bar['file_name'], 'w') as outfile:
+    with open('../processed/%s_wa.json' % bar['file_name'], 'w') as outfile:
         json.dump(bar_reviews, outfile, indent=2)
     print 'saved ' + bar['file_name']+ '.json file'
 
@@ -137,14 +144,17 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
 
 def crawl_reviews(bars):
     limit = 50 #1/27 formerly 20 page limit
-    base_dir = "./raw/"
+    base_dir = "../raw/"
     for (bar_num,url) in enumerate(bars.keys()):
       start_page = len(glob.glob('../raw/' + bars[url]['file_name'] + '*')) + 1
       if start_page >= limit: # Limit the number of pages of reviews per bar
         print "Limiting %s to %d pages of reviews" % (url, limit)
         continue
       print "Crawling %s starting from page %d" % (url, start_page)
-      crawl("../raw/" + bars[url]['file_name'] + "_%d.html", url, 40, start_page=start_page)
+      try:
+        crawl("../raw/" + bars[url]['file_name'] + "_%d.html", url, 40, start_page=start_page)
+      except ValueError:
+        sys.stdout.write("Problem parsing bar name.  Skipping")        
       # When we return from crawl, its likely that yelp cut of off, and we haven't gotten all the data yet
       # for a given bar, lets just more onto the next bar
 
@@ -188,6 +198,7 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
         time.sleep(random.uniform(3,5))
 
     for page_num in range(start_page, start_page+num_pages):
+        print page_num
         if page_num == 1:
           continue  # We already processed the first page, no need to do it again
         try:
@@ -212,9 +223,9 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
     browser.quit()
 
 def main():
-    if True:  # Set this to True or False depending on whether we want to crawl bars
+    if False:  # Set this to True or False depending on whether we want to crawl bars
 #        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA' #North Beach 'nb'
-        url = '/search?find_desc=bars&find_loc=SF&ns=1#find_loc=Western+Addition,+San+Francisco,+CA' #Western Addition 'wa'
+        url = '/search?find_desc=bars&find_loc=Western+Addition%2C+San+Francisco' #Western Addition 'wa'
         crawl("../raw/bars_wa_%d.html", url, 10)
 
     if True:
@@ -222,7 +233,7 @@ def main():
         with open('../processed/bars_wa.json', 'w') as outfile:
             json.dump(bars, outfile, indent=2)
 
-    if True:
+    if False:
         crawl_reviews(bars)
 
         #Need to loop over pages
