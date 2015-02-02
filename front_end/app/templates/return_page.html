@@ -15,7 +15,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../static/css/the-big-picture.css" rel="stylesheet">
-    <!--link href="starter-template.css" rel="stylesheet"-->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,29 +56,28 @@
       <div class="starter-template">
         <h1>LocalFeel</h1>
         <p class="lead">New to town?  LocalFeel helps you find the places locals love.</p>
-	  <h3>Find a bar near</h3>
-	    <f:rm action="/return_page" method="GET">
+	  <h4>Find a bar near</h4>
+	    <form action="/return_page" method="GET">
               <div class="row">
                 <div class="col-xs-4">
-                  <input type="text" name="address" class="form-control">
+                  <input type="text" name="address" class="form-control" placeholder="Street address">
                 </div>
-                <input type="submit" name="my-form" value="Go">
+                <div class="col-xs-1">
+                  <input type="submit" name="my-form" value="Go" class="form-control">
+                </div>
               </div>
 	    </form>
 	</br></br>
 
       </div>
-    <table class="table table-hover">
-    <tr><th>Bar</th><th>Category</th><th>Address</th><th>Yelp Rating</th><th>Local Rating</th></tr>
-    {% for d in data %}
-      <tr><td>{{d["bar_name"]}}</td><td>{{d["bar_category_1"]}}</td><td>{{d["bar_address"]}}</td><td>{{d["bar_rating"]}}</td><td>{{d["local_rating"]}}</td></tr>
-    {% endfor %}  
-
-
-{% for city in cities %}
-    <tr><td>{{ city['name'] }}</td><td>{{ city['country']}}</td><td> {{ city['population'] }}</td></tr>
-    {% endfor %}
-    </table>
+    <div class="container-fluid; img-rounded" style="background: white;">
+      <table class="table table-hover">
+      <tr><th>Bar</th><th>Category</th><th>Address</th><th>Yelp Rating</th><th>Local Rating</th></tr>
+      {% for d in data %}
+        <tr><td>{{d["bar_name"]}}</td><td>{{d["bar_category_1"]}}</td><td>{{d["bar_address"]}}</td><td>{{d["bar_rating"]}}</td><td>{{d["local_rating"]}}</td></tr>
+      {% endfor %}  
+      </table>
+    </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
 
