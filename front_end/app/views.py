@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from app import app
 import psycopg2
 import psycopg2.extensions
@@ -22,8 +22,8 @@ def index():
                           user = user
                           )
 
-@app.route('/return_page', methods=['GET'])
-def return_page():
+@app.route('/consult', methods=['GET'])
+def consult():
    name = request.args.get('address', None)
    #convert name to longitude and latitude (geocoder???)
    timeout = 60
@@ -42,16 +42,14 @@ def return_page():
       for bar in query_results:
         if bar[5] == True:
             inside.append(dict(zip(keys, bar)))
+   # Reason for calling flask.jsonify() as opposed to json.dumps()
+   #   http://flask.pocoo.org/docs/0.10/security/#json-security
+   return jsonify({'results' : inside})
 
-#   json_bars = os.path.dirname(os.path.realpath(__file__))+'/bars_nb.json'
-#   bar_dict = json.loads(open(json_bars).read())
-   #return_vals = {'key':'value'} #Need to make this real
-   return render_template("return_page.html", data=inside)
-
-
-
-
-
+@app.route('/map')
+def map():
+   user = { 'nickname': 'Laura' },
+   return render_template("map_test.html")
 
 @app.route('/db')
 def cities_page():

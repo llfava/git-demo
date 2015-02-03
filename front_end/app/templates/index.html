@@ -120,6 +120,7 @@ $('#button_go').on('click',function(event){
       $('#results_message_div').removeClass('hidden');
       return
     }
+    data=data['results']
     console.log("Number of results found: ", Object.keys(data).length);
     results = Object.keys(data).length;
     if (results <= 0) {
