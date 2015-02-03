@@ -57,31 +57,38 @@
         <h1>LocalFeel</h1>
         <p class="lead">New to town?  LocalFeel helps you find the places locals love.</p>
 	  <h4>Find a bar near</h4>
-	    <form action="/return_page" method="GET">
-              <div class="row">
-                <div class="col-xs-4">
-                  <input type="text" name="address" class="form-control" placeholder="Street address">
-                </div>
-                <div class="col-xs-1">
-                  <input type="submit" name="my-form" value="Go" class="form-control">
-                </div>
-              </div>
-	    </form>
+      <div class="row">
+        <div class="col-xs-4">
+          <input id="text_address" type="text" name="address" class="form-control" placeholder="Street address">
+        </div>
+        <div class="col-xs-1">
+          <input id="button_go" type="submit" name="my-form" value="Go" class="form-control">
+        </div>
+      </div>
 	</br></br>
 
       </div>
-    <!--div id="results">
-      <table class="table table-hover">
-      <tr><th>Bar</th><th>Category</th><th>Address</th><th>Yelp Rating</th><th>Local Rating</th></tr>
-      {% for d in data %}
-        <tr><td>{{d["bar_name"]}}</td><td>{{d["bar_category_1"]}}</td><td>{{d["bar_address"]}}</td><td>{{d["bar_rating"]}}</td><td>{{d["local_rating"]}}</td></tr>
-      {% endfor %}  
-      </table>
+    <div id="results_message_div" class="hidden">
+      <h4 id="results_message">Message</h4>
+    </div>
+    <div id="results_table_div" class="hidden">
+      <div class="container-fluid; img-rounded" style="background: white;">
+        <table class="table table-hover" id="results_table">
+        <tr><th>Bar</th><th>Category</th><th>Address</th><th>Yelp Rating</th><th>Local Rating</th></tr>
+          <tr id="results_row" class="hidden">
+            <td id="bar_name">bar_name</td>
+            <td id="bar_category_1">bar_category_1</td>
+            <td id="bar_address">bar_address</td>
+            <td id="bar_rating">bar_rating</td>
+            <td id="local_rating">local_rating</td>
+          </tr>
+        </table>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
 
-    </div--><!-- /.container -->
+    </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -92,3 +99,59 @@
     <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+<script>
+$('#button_go').on('click',function(event){
+  console.log('click');
+  $('#results_message_div').addClass('hidden');
+  $('#results_table_div').addClass('hidden');
+  var address = $('#text_address').val();
+  if (address == '') {
+    console.log('no address entered');
+    $('#results_message').text('Did you forget the address?');
+    $('#results_message_div').removeClass('hidden');
+    return
+  }
+  console.log($(address));
+  $.getJSON('consult?address=' + address, function(data) {
+    console.log(data);
+    if (data == null) {
+      console.log('back-end error');
+      $('#results_message').text("We couldn't process your address.  Oops, that's embarassing.");
+      $('#results_message_div').removeClass('hidden');
+      return
+    }
+    console.log("Number of results found: ", Object.keys(data).length);
+    results = Object.keys(data).length;
+    if (results <= 0) {
+      console.log('no results found');
+      $('#results_message').text('No results found for that address.  How about going to the Marina?');
+      $('#results_message_div').removeClass('hidden');
+      return
+    }
+    $('#results_message_div').addClass('hidden');
+    // Remove all previous results from table
+    var rows = $('#results_table').find($(".temp"));
+    for (var index=0; index < rows.length; index+=1) {
+       rows[index].remove();
+    } 
+    // Make table visible and populate table with results
+    $('#results_table_div').removeClass('hidden');
+    for (var item in data) {
+      var new_row = $('#results_row').clone();
+      $(new_row).addClass('temp');
+      for (var key in data[item]) {
+        //console.log(key);
+        $(new_row).find("#"+key).text(data[item][key])
+      }
+      $(new_row).removeClass('hidden');
+      $('#results_table').append(new_row);
+    }
+  });
+});
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    console.log('Enter pressed');
+    $('#button_go').click();
+  }
+});
+</script>
