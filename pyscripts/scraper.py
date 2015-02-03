@@ -51,26 +51,22 @@ def parse_reviews(url, bar):
                                     "review_text": review_text 
                                     }
         fhandle.close()
-    with open('../processed/%s_nb.json' % bar['file_name'], 'w') as outfile:
+    with open('../processed/%s.json' % bar['file_name'], 'w') as outfile:
         json.dump(bar_reviews, outfile, indent=2)
     print 'saved ' + bar['file_name']+ '.json file'
 
     return bar_reviews
 
-def parse_bars(): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
-    bars = {}
-    res = glob.glob("../raw/bars_nb_*.html")
-#    res = glob.glob("../raw/bars_nb_1.html") # for testing
+def parse_bars(bars, neighborhood): ###Some space and /n issues in the neighborhoods and categories fields - is this an issue? LF 1/26 8:30PM
+    res = glob.glob("../raw/bars_%s_*.html" % neighborhood)
 
     for fname in res:
         fhandle = open(fname, 'r')
         soup = BeautifulSoup(fhandle)
         search_results = soup.find_all("div", {"class": "search-result natural-search-result"})
-        #print search_results[0]['data-key']
         for result in search_results:
             biz_id = result.find("a", { "class" : "biz-name" })
-                #biz.tex is the bar's URL.  Note that this url does not have www.yelp.com. Need to add that in later
-
+            #biz.tex is the bar's URL.  Note that this url does not have www.yelp.com. Need to add that in later
             search = " star rating"
             biz_stars = result.find_all("div", {"class" : "rating-large"})
             for biz_star in biz_stars:
@@ -141,21 +137,25 @@ def parse_bars(): ###Some space and /n issues in the neighborhoods and categorie
         fhandle.close()
     return bars
 
-def crawl_reviews(bars):
-    limit = 50 #1/27 formerly 20 page limit
-    base_dir = "../raw/"
-    for (bar_num,url) in enumerate(bars.keys()):
-      start_page = len(glob.glob('../raw/' + bars[url]['file_name'] + '*')) + 1
-      if start_page >= limit: # Limit the number of pages of reviews per bar
-        print "Limiting %s to %d pages of reviews" % (url, limit)
-        continue
-      print "Crawling %s starting from page %d" % (url, start_page)
-      try:
-        crawl("../raw/" + bars[url]['file_name'] + "_%d.html", url, 40, start_page=start_page)
-      except ValueError:
-        sys.stdout.write("Problem parsing bar name.  Skipping")        
-      # When we return from crawl, its likely that yelp cut of off, and we haven't gotten all the data yet
-      # for a given bar, lets just more onto the next bar
+def crawl_reviews(bar, url):
+    limit = 50
+    raw_base_dir = "../raw/"
+    start_page = len(glob.glob('../raw/' + bar['file_name'] + '*')) + 1
+
+    # TODO: I don't understand this if-statement anymore...
+    if bar['bar_num_reviews'] <= float(start_page - 1)/40: # Check if all reviews have been parsed
+      return
+
+    if start_page >= limit: # Limit the number of pages of reviews per bar
+      print "Limiting %s to %d pages of reviews" % (url, limit)
+      return
+    print "Crawling %s starting from page %d" % (url, start_page)
+    try:
+      crawl("../raw/" + bar['file_name'] + "_%d.html", url, 40, start_page=start_page)
+    except ValueError:
+      sys.stdout.write("Problem parsing bar name.  Skipping")        
+    # When we return from crawl, its likely that yelp cut of off, and we haven't gotten all the data yet
+    # for a given bar, so move onto the next bar
 
 def crawl(base_name, url, increment, start_page=1, num_pages=6):
     # Scrapping yelp is not fun...
@@ -197,7 +197,7 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
         time.sleep(random.uniform(3,5))
 
     for page_num in range(start_page, start_page+num_pages):
-        print page_num
+        #print page_num
         if page_num == 1:
           continue  # We already processed the first page, no need to do it again
         try:
@@ -221,24 +221,59 @@ def crawl(base_name, url, increment, start_page=1, num_pages=6):
         fhandle.close()
     browser.quit()
 
+def get_reviews_in_json(bar):
+  processed_base_dir = "../processed/"
+  try:
+    reviews = json.load(open(processed_base_dir + bar['file_name'] + '.json'))
+  except IOError:
+    return {}
+  return reviews
+
 def main():
-    if False:  # Set this to True or False depending on whether we want to crawl bars
-#        url = '/search?find_desc=bars&find_loc=North+Beach%2C+San+Francisco%2C+CA' #North Beach 'nb'
-        url = '/search?find_desc=bars&find_loc=Western+Addition%2C+San+Francisco' #Western Addition 'wa'
-        crawl("../raw/bars_wa_%d.html", url, 10)
+  neighborhoods = ['North+Beach', 'Western+Addition']
 
-    if True:
-        bars = parse_bars()
-        with open('../processed/bars_nb.json', 'w') as outfile:
-            json.dump(bars, outfile, indent=2)
+  if False:
+    sys.stdout.write("Crawling bars for neighborhood: ")
+    sys.stdout.flush()
+    for neighborhood in neighborhoods:
+      url = '/search?find_desc=bars&find_loc=' + neighborhood + '%2C+San+Francisco%2C+CA'
+      neighborhood = neighborhood.replace('+', '_')
+      sys.stdout.write("%s, " % neighborhood)
+      sys.stdout.flush()
+      filenames = "../raw/bars_" + neighborhood + "_%d.html"
+      crawl(filenames, url, 10)
+    sys.stdout.write("Done!\n")
 
-    if False:
-        crawl_reviews(bars)
+  if False:
+    sys.stdout.write("Parsing bars for neighborhood: ")
+    sys.stdout.flush()
+    outfile = open('../processed/bars.json', 'w')
+    bars = {}
+    for neighborhood in neighborhoods:
+      neighborhood = neighborhood.replace('+', '_')
+      sys.stdout.write("%s, " % neighborhood)
+      sys.stdout.flush()
+      parse_bars(bars, neighborhood)
+    json.dump(bars, outfile, indent=2)
+    sys.stdout.write("Done!\n")
+    outfile.close()
 
-        #Need to loop over pages
-    if True:
-        for url in bars:
-            reviews = parse_reviews(url, bars[url])
+  if True:
+    bars = json.load(open('../processed/bars.json'))
+    for (bar_num,url) in enumerate(bars.keys()):
+      bar = bars[url]
+      num_reviews_in_json = len(get_reviews_in_json(bar))
+      total_num_reviews = bar['bar_num_reviews']
+      if bar['bar_num_reviews'] > num_reviews_in_json:
+        print "We have %d our of %d reviews for %s" % (num_reviews_in_json, total_num_reviews, url)
+        crawl_reviews(bar, url)
+      else:
+        print "We have all %d reviews for %s" % (num_reviews_in_json, url)
+
+  #Need to loop over pages
+  if False:
+    for url in bars:
+      reviews = parse_reviews(url, bars[url])
 
 if __name__ == "__main__":
     main()
