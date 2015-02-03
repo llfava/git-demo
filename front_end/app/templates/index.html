@@ -25,6 +25,20 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+   <!-- BEGIN MAP STUFF -->
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+   <link rel="stylesheet" href="../static/css/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="../static/css/MarkerCluster.css">
+   <script src="../static/js/leaflet.markercluster-src.js"></script>
+   <script src="../static/js/leaflet.markercluster.js"></script>
+   <link rel="stylesheet" href="http://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+   <!-- END MAP STUFF -->
   </head>
 
   <body>
@@ -71,6 +85,9 @@
     <div id="results_message_div" class="hidden">
       <h4 id="results_message">Message</h4>
     </div>
+    <div id="results_map_div">
+      <div class="folium-map" id="map" style="width: 480px; height: 250px"></div>
+    </div>
     <div id="results_table_div" class="hidden">
       <div class="container-fluid; img-rounded" style="background: white;">
         <table class="table table-hover" id="results_table">
@@ -100,6 +117,50 @@
   </body>
 </html>
 <script>
+$( document ).ready(function() {
+  console.log( "ready!" );
+  var base_tile = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+      maxZoom: 15,
+  });
+
+  var baseLayer = {
+    "Base Layer": base_tile
+  };
+
+  /*
+  addition of the wms layers
+  */ 
+  
+  /*
+  addition of the tile layers
+  */
+  
+  /*
+  list of layers to be added
+  */ 
+  var layer_list = {};
+
+  /*
+  Creates the map and adds the selected layers
+  */
+  map = L.map('map', { center:[37.8001497, -122.4107165],
+           zoom: 10,
+           layers: [base_tile] });
+
+  L.control.layers(baseLayer, layer_list).addTo(map);
+
+  //cluster group
+  var clusteredmarkers = L.markerClusterGroup();
+  //section for adding clustered markers
+  
+  //add the clustered markers to the group anyway
+  map.addLayer(clusteredmarkers);
+
+  var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+  var marker_1 = L.marker([45.3288, -121.6625], {'icon':marker_1_icon});
+  marker_1.bindPopup("My Popup Message");
+  map.addLayer(marker_1)
+});
 $('#button_go').on('click',function(event){
   console.log('click');
   $('#results_message_div').addClass('hidden');
@@ -120,9 +181,12 @@ $('#button_go').on('click',function(event){
       $('#results_message_div').removeClass('hidden');
       return
     }
-    data=data['results']
-    console.log("Number of results found: ", Object.keys(data).length);
-    results = Object.keys(data).length;
+    bar_data=data['results']
+    loc=data['location']
+    console.log("Location: ", loc);
+    map.setView(loc, 15);
+    console.log("Number of results found: ", Object.keys(bar_data).length);
+    results = Object.keys(bar_data).length;
     if (results <= 0) {
       console.log('no results found');
       $('#results_message').text('No results found for that address.  How about going to the Marina?');
@@ -137,12 +201,12 @@ $('#button_go').on('click',function(event){
     } 
     // Make table visible and populate table with results
     $('#results_table_div').removeClass('hidden');
-    for (var item in data) {
+    for (var item in bar_data) {
       var new_row = $('#results_row').clone();
       $(new_row).addClass('temp');
-      for (var key in data[item]) {
+      for (var key in bar_data[item]) {
         //console.log(key);
-        $(new_row).find("#"+key).text(data[item][key])
+        $(new_row).find("#"+key).text(bar_data[item][key])
       }
       $(new_row).removeClass('hidden');
       $('#results_table').append(new_row);

@@ -44,7 +44,7 @@ def consult():
             inside.append(dict(zip(keys, bar)))
    # Reason for calling flask.jsonify() as opposed to json.dumps()
    #   http://flask.pocoo.org/docs/0.10/security/#json-security
-   return jsonify({'results' : inside})
+   return jsonify({'results' : inside, 'location' : (lati,lon)})
 
 @app.route('/map')
 def map():
