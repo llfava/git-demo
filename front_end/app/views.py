@@ -38,7 +38,7 @@ def consult():
    with db:
       radius = 1000.0 # meters
       cur = db.cursor()
-      q = "SELECT bar_name, bar_category_1, bar_address, bar_rating, local_rating, ST_DWithin(ST_GeogFromText('POINT(' || lon || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s) FROM bars;"# LIMIT 5;"
+      q = "SELECT bar_name, bar_category_1, bar_address, bar_rating, local_rating, ST_DWithin(ST_GeogFromText('POINT(' || lon || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s), lat, lon FROM bars ORDER by bar_rating DESC, local_rating;"# LIMIT 5;"
       cur.execute(q, (location.longitude, location.latitude, radius))
       query_results = cur.fetchall()
       keys = ['bar_name', 'bar_category_1', 'bar_address', 'bar_rating', 'local_rating']
