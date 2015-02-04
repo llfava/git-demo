@@ -175,7 +175,7 @@ $('#button_go').on('click',function(event){
   console.log($(address));
   $.getJSON('consult?address=' + address, function(data) {
     console.log(data);
-    if (data == null) {
+    if ('error' in data) {
       console.log('back-end error');
       $('#results_message').text("We couldn't process your address.  Oops, that's embarassing.");
       $('#results_message_div').removeClass('hidden');

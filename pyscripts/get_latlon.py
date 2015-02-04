@@ -10,7 +10,7 @@ def main():
 
     geolocator = Nominatim()
 
-    json_bars = '../processed/bars_nb.json'
+    json_bars = '../processed/bars.json'
     bar_dict = json.loads(open(json_bars).read())
 
     bar_reviews = {}
@@ -27,7 +27,7 @@ def main():
                 print address
                 print (location.latitude, location.longitude)
                 bar_dict[key]['lat'] = location.latitude
-                bar_dict[key]['long'] = location.longitude
+                bar_dict[key]['lon'] = location.longitude
             except AttributeError:
                 sys.stdout.write('Address not valid.  Removing %s\n' % bar_dict[key]['bar_name'])
                 bad_key.append(key)
@@ -40,7 +40,7 @@ def main():
             del bar_dict[key]
 
 
-    with open('../processed/bars_nb_latlong.json', 'w') as outfile:
+    with open('../processed/bars_latlon.json', 'w') as outfile:
         json.dump(bar_dict, outfile, indent=2)
 
 
