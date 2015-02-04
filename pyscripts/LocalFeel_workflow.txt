@@ -1,5 +1,5 @@
 This document describes the work flow for LocalFeel.
-Last updated: 1/31/2015
+Last updated: 2/1/2015
 
 ~/git-demo/pyscripts/
 ###Data Collection###
@@ -24,9 +24,10 @@ reviews.
 
 4) prelim_analysis-2.ipynb
 This notebook takes as input bars_**_latlong.json and the associated <bar-name>.json 
-files and evaluates the localness of the bars based on the ave rating by SF reviewers
-versus the average rating by nonSF reviewers, dividing the bars into three categories:
-local, neutral, touristy.  This is the starting point for the true analysis.  
+files and evaluates the localness of the bars based on the weighted ave rating by SF 
+reviewers versus the weighted average rating by nonSF reviewers, dividing the bars into 
+three categories: local, neutral, touristy.  This is the starting point for the true 
+analysis.  
 
 ###Create database###
 5) populate_bars_nb.py
