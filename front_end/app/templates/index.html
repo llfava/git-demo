@@ -120,7 +120,7 @@
 $( document ).ready(function() {
   console.log( "ready!" );
   var base_tile = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
-      maxZoom: 15,
+      maxZoom: 17,
   });
 
   var baseLayer = {
@@ -144,7 +144,7 @@ $( document ).ready(function() {
   Creates the map and adds the selected layers
   */
   map = L.map('map', { center:[37.7620, -122.4426],
-           zoom: 10,
+           zoom: 12,
            layers: [base_tile] });
 
   L.control.layers(baseLayer, layer_list).addTo(map);
@@ -156,9 +156,9 @@ $( document ).ready(function() {
   //add the clustered markers to the group anyway
   map.addLayer(clusteredmarkers);
 
-  var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-  var marker_1 = L.marker([37.7620, -122.4426], {'icon':marker_1_icon});
-  marker_1.bindPopup("My Popup Message");
+  marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+  marker_1 = L.marker([37.7620, -122.4426], {'icon':marker_1_icon});
+  marker_1.bindPopup("Enter start address");
   map.addLayer(marker_1)
 });
 $('#button_go').on('click',function(event){
@@ -172,7 +172,7 @@ $('#button_go').on('click',function(event){
     $('#results_message_div').removeClass('hidden');
     return
   }
-  console.log($(address));
+  console.log(address);
   $.getJSON('consult?address=' + address, function(data) {
     console.log(data);
     if ('error' in data) {
@@ -184,7 +184,15 @@ $('#button_go').on('click',function(event){
     bar_data=data['results']
     loc=data['location']
     console.log("Location: ", loc);
-    map.setView(loc, 15);
+    //Adjust map center; place and label starting address marker
+    map.setView(loc, 14);
+    var clusteredmarkers = L.markerClusterGroup();
+    map.addLayer(clusteredmarkers);
+    console.log(address);
+    var marker_2_icon = L.AwesomeMarkers.icon({ icon: 'star',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+    var marker_2 = L.marker(loc, {'icon':marker_2_icon});
+    marker_2.bindPopup("Starting address: " + address);
+    map.removeLayer(marker_1)
     console.log("Number of results found: ", Object.keys(bar_data).length);
     results = Object.keys(bar_data).length;
     if (results <= 0) {
@@ -193,24 +201,53 @@ $('#button_go').on('click',function(event){
       $('#results_message_div').removeClass('hidden');
       return
     }
-    $('#results_message_div').addClass('hidden');
-    // Remove all previous results from table
-    var rows = $('#results_table').find($(".temp"));
-    for (var index=0; index < rows.length; index+=1) {
-       rows[index].remove();
-    } 
-    // Make table visible and populate table with results
-    $('#results_table_div').removeClass('hidden');
+
+    //Add markers for bars
     for (var item in bar_data) {
-      var new_row = $('#results_row').clone();
-      $(new_row).addClass('temp');
       for (var key in bar_data[item]) {
-        //console.log(key);
-        $(new_row).find("#"+key).text(bar_data[item][key])
+        var clusteredmarkers = L.markerClusterGroup();
+        map.addLayer(clusteredmarkers);
+	if (bar_data[item]['local_rating'] == 'local'){
+          var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
+          marker_3.bindPopup(bar_data[item]['bar_name']);
+          map.addLayer(marker_3)
+	}
+        else if (bar_data[item]['local_rating'] == 'neutral'){
+          var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'orange',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
+          marker_3.bindPopup(bar_data[item]['bar_name']);
+          map.addLayer(marker_3)
+	}
+	else if (bar_data[item]['local_rating'] == 'touristy'){
+          var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'red',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
+          marker_3.bindPopup(bar_data[item]['bar_name']);
+          map.addLayer(marker_3)
+	}
       }
-      $(new_row).removeClass('hidden');
-      $('#results_table').append(new_row);
     }
+    map.addLayer(marker_2)
+
+
+    //$('#results_message_div').addClass('hidden');
+    //// Remove all previous results from table
+    //var rows = $('#results_table').find($(".temp"));
+    //for (var index=0; index < rows.length; index+=1) {
+       //rows[index].remove();
+    //} 
+    //// Make table visible and populate table with results
+    //$('#results_table_div').removeClass('hidden');
+    //for (var item in bar_data) {
+      //var new_row = $('#results_row').clone();
+      //$(new_row).addClass('temp');
+      //for (var key in bar_data[item]) {
+        ////console.log(key);
+        //$(new_row).find("#"+key).text(bar_data[item][key])
+      //}
+      //$(new_row).removeClass('hidden');
+      //$('#results_table').append(new_row);
+    //}
   });
 });
 $(document).keypress(function(e) {
