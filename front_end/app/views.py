@@ -38,13 +38,13 @@ def consult():
    with db:
       radius = 1000.0 # meters
       cur = db.cursor()
-      q = "SELECT bar_name, bar_category_1, bar_address, bar_rating, local_rating, ST_DWithin(ST_GeogFromText('POINT(' || lon || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s), lat, lon FROM bars ORDER by bar_rating DESC, local_rating;"# LIMIT 5;"
+      q = "SELECT bar_name, bar_category_1, bar_address, bar_rating, local_rating, lat, lon, file_name, ST_DWithin(ST_GeogFromText('POINT(' || lon || ' ' || lat || ')'),ST_GeogFromText('POINT(%s %s)'), %s) FROM bars ORDER by bar_rating DESC, local_rating;"# LIMIT 5;"
       cur.execute(q, (location.longitude, location.latitude, radius))
       query_results = cur.fetchall()
-      keys = ['bar_name', 'bar_category_1', 'bar_address', 'bar_rating', 'local_rating']
+      keys = ['bar_name', 'bar_category_1', 'bar_address', 'bar_rating', 'local_rating', 'lat', 'lon', 'file_name']
       inside = []
       for bar in query_results:
-        if bar[5] == True:
+        if bar[-1] == True:
             inside.append(dict(zip(keys, bar)))
    # Reason for calling flask.jsonify() as opposed to json.dumps()
    #   http://flask.pocoo.org/docs/0.10/security/#json-security
@@ -54,6 +54,11 @@ def consult():
 def map():
    user = { 'nickname': 'Laura' },
    return render_template("map_test.html")
+
+@app.route('/osm')
+def osm():
+   user = { 'nickname': 'Laura' },
+   return render_template("osm.html")
 
 @app.route('/db')
 def cities_page():
