@@ -205,26 +205,25 @@ $('#button_go').on('click',function(event){
     //Add markers for bars
     for (var item in bar_data) {
       for (var key in bar_data[item]) {
+	console.log(key, bar_data[item][key]);
         var clusteredmarkers = L.markerClusterGroup();
         map.addLayer(clusteredmarkers);
 	if (bar_data[item]['local_rating'] == 'local'){
           var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'green',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
-          marker_3.bindPopup(bar_data[item]['bar_name']);
-          map.addLayer(marker_3)
 	}
         else if (bar_data[item]['local_rating'] == 'neutral'){
           var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'orange',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
-          marker_3.bindPopup(bar_data[item]['bar_name']);
-          map.addLayer(marker_3)
 	}
 	else if (bar_data[item]['local_rating'] == 'touristy'){
           var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'None',markerColor: 'red',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-          var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
-          marker_3.bindPopup(bar_data[item]['bar_name']);
-          map.addLayer(marker_3)
 	}
+        var marker_3 = L.marker([bar_data[item]['lat'], bar_data[item]['lon']], {'icon':marker_3_icon});
+	var popup_name = '<a href="http://www.yelp.com/biz/' + bar_data[item]['file_name'] + '" target="_blank">' + bar_data[item]['bar_name'] + "</a>";
+	var popup_address = bar_data[item]['bar_address'];
+	var popup_rating = 'Yelp rating: ' + bar_data[item]['bar_rating'] + ' stars';
+	var popup_text = popup_name + '</br>' + popup_address + '</br>'+ popup_rating;
+        marker_3.bindPopup(popup_text);
+        map.addLayer(marker_3)
       }
     }
     map.addLayer(marker_2)
