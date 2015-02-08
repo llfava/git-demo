@@ -34,8 +34,9 @@ def main():
             bar_neighborhood_1 = bars[bar]['bar_neighborhood_1']
             bar_neighborhood_2 = bars[bar]['bar_neighborhood_2']
             bar_neighborhood_3 = bars[bar]['bar_neighborhood_3']
+            file_name = bars[bar]['file_name']
 
-            q = "INSERT INTO bars VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+            q = "INSERT INTO bars VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
             cur.execute(q, (
                     bar_name,
                     bar_address,
@@ -49,7 +50,8 @@ def main():
                     bar_category_3,
                     bar_neighborhood_1,
                     bar_neighborhood_2,
-                    bar_neighborhood_3))
+                    bar_neighborhood_3,
+                    file_name))
         conn.commit()
         cur.close()
         conn.close()
