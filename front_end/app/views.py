@@ -1,4 +1,4 @@
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, send_file
 from app import app
 import psycopg2
 import psycopg2.extensions
@@ -21,6 +21,10 @@ def index():
                           title = 'Home',
                           user = user
                           )
+
+@app.route('/about', methods=['GET'])
+def about():
+    return send_file("./static/slides/demo.pdf")
 
 # TODO:
 # Figure out why these addresses can't be processed by geolocator:
