@@ -21,6 +21,10 @@ def main():
     if True:
         for key in bar_dict:
             s = re.search("(.*)" + search, bar_dict[key]['bar_address'])
+            if not s:
+              # If there is not result for the search, its beacuse the bar is likely not in San Francisco
+              # For example: 22 Hillcrest Dr, Daly City, CA 94014
+              continue
             address = s.group(1) + search
             try:
                 location = geolocator.geocode(address, timeout = timeout)
