@@ -18,8 +18,10 @@ def main():
     timeout = 60
     bad_key = []
 
+    total = len(bar_dict)
     if True:
-        for key in bar_dict:
+        for (cnt, key) in enumerate(bar_dict):
+            print "Processing (%d/%d)" % (cnt+1, total)
             s = re.search("(.*)" + search, bar_dict[key]['bar_address'])
             if not s:
               # If there is not result for the search, its beacuse the bar is likely not in San Francisco
