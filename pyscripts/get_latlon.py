@@ -26,12 +26,19 @@ def main():
             if not s:
               # If there is not result for the search, its beacuse the bar is likely not in San Francisco
               # For example: 22 Hillcrest Dr, Daly City, CA 94014
+              bad_key.append(key)
               continue
             address = s.group(1) + search
             try:
                 location = geolocator.geocode(address, timeout = timeout)
                 print address
-                print (location.latitude, location.longitude)
+                print (location.latitude, location.longitude),
+                if location.latitude > 37.83 or location.latitude < 37.7 or location.longitude > -122.35 or location.longitude < -122.55:
+                  print "(skipping)"
+                  bad_key.append(key)
+                  continue
+                else:
+                  print
                 bar_dict[key]['lat'] = location.latitude
                 bar_dict[key]['lon'] = location.longitude
             except AttributeError:
