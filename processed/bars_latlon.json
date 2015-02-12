@@ -74,19 +74,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 5.0
   }, 
-  "/biz/sugs-daly-city": {
-    "bar_category_1": "Venues & Event Spaces", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Lounges", 
-    "file_name": "sugs-daly-city", 
-    "bar_name": "Sug\u2019s", 
-    "bar_address": "22 Hillcrest Dr, Daly City, CA 94014", 
-    "bar_num_reviews": 7, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/the-little-chihuahua-san-francisco": {
     "bar_category_1": "Mexican", 
     "bar_category_3": "none", 
@@ -807,19 +794,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/bart-grocery-and-bbq-daly-city": {
-    "bar_category_1": "Grocery", 
-    "bar_category_3": "Barbeque", 
-    "bar_category_2": "Korean", 
-    "file_name": "bart-grocery-and-bbq-daly-city", 
-    "bar_name": "Bart Grocery & BBQ", 
-    "bar_address": "108 Los Olivos Ave, Daly City, CA 94014", 
-    "bar_num_reviews": 385, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/fog-lifter-cafe-san-francisco": {
     "bar_category_1": "Cafes", 
     "bar_category_3": "none", 
@@ -954,21 +928,6 @@
     "bar_neighborhood_2": "North Beach/Telegraph Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/sip-bar-and-lounge-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Cocktail Bars", 
-    "file_name": "sip-bar-and-lounge-san-francisco", 
-    "bar_name": "Sip Bar & Lounge", 
-    "lon": -122.3457857, 
-    "bar_address": "787 Broadway St, San Francisco, CA 94133", 
-    "lat": 37.9691074, 
-    "bar_num_reviews": 319, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/the-hearth-san-francisco": {
     "bar_category_1": "Bars", 
@@ -1251,21 +1210,6 @@
     "lat": 37.7672525918367, 
     "bar_num_reviews": 16, 
     "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/the-red-jack-saloon-san-francisco": {
-    "bar_category_1": "Sports Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Dive Bars", 
-    "file_name": "the-red-jack-saloon-san-francisco", 
-    "bar_name": "The Red Jack Saloon", 
-    "lon": -122.395105, 
-    "bar_address": "131 Bay St, San Francisco, CA 94133", 
-    "lat": 37.6107173333333, 
-    "bar_num_reviews": 180, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
@@ -1554,21 +1498,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/dear-mom-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "American (New)", 
-    "file_name": "dear-mom-san-francisco", 
-    "bar_name": "Dear Mom", 
-    "lon": -122.3487543, 
-    "bar_address": "2700 16th St, San Francisco, CA 94103", 
-    "lat": 37.9701737, 
-    "bar_num_reviews": 286, 
-    "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/campus-san-francisco": {
     "bar_category_1": "Pubs", 
@@ -2995,19 +2924,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/7-mile-house-sports-bar-and-grill-brisbane": {
-    "bar_category_1": "Sports Bars", 
-    "bar_category_3": "Dive Bars", 
-    "bar_category_2": "American (Traditional)", 
-    "file_name": "7-mile-house-sports-bar-and-grill-brisbane", 
-    "bar_name": "7 Mile House Sports Bar & Grill", 
-    "bar_address": "2800 Bayshore Blvd, Brisbane, CA 94005", 
-    "bar_num_reviews": 438, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/brendas-french-soul-food-san-francisco": {
     "bar_category_1": "Breakfast & Brunch", 
     "bar_category_3": "Soul Food", 
@@ -3083,21 +2999,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/chaya-brasserie-san-francisco": {
-    "bar_category_1": "French", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Asian Fusion", 
-    "file_name": "chaya-brasserie-san-francisco", 
-    "bar_name": "Chaya Brasserie", 
-    "lon": -122.262315412717, 
-    "bar_address": "132 The Embarcadero, San Francisco, CA 94105", 
-    "lat": 37.7908061049008, 
-    "bar_num_reviews": 1560, 
-    "bar_neighborhood_1": "Embarcadero, Financial District", 
-    "bar_neighborhood_2": "SoMa", 
-    "bar_neighborhood_3": "South Beach", 
-    "bar_rating": 4.0
-  }, 
   "/biz/randys-place-san-francisco": {
     "bar_category_1": "Dive Bars", 
     "bar_category_3": "none", 
@@ -3127,19 +3028,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/round-table-pizza-daly-city-2": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "round-table-pizza-daly-city-2", 
-    "bar_name": "Round Table Pizza", 
-    "bar_address": "6222 Mission Street, Daly City, CA 94015", 
-    "bar_num_reviews": 40, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/billiard-palacade-san-francisco": {
     "bar_category_1": "Pool Halls", 
@@ -3231,51 +3119,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/hopwater-distribution-san-francisco": {
-    "bar_category_1": "Pubs", 
-    "bar_category_3": "none", 
-    "bar_category_2": "American (Traditional)", 
-    "file_name": "hopwater-distribution-san-francisco", 
-    "bar_name": "Hopwater Distribution", 
-    "lon": -122.080223251699, 
-    "bar_address": "850 Bush St, San Francisco, CA 94108", 
-    "lat": 37.3852035098668, 
-    "bar_num_reviews": 221, 
-    "bar_neighborhood_1": "Nob Hill", 
-    "bar_neighborhood_2": "Union Square", 
-    "bar_neighborhood_3": "Lower Nob Hill", 
-    "bar_rating": 4.5
-  }, 
-  "/biz/red-dragon-cocktail-lounge-olde-chinatown-sf-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "red-dragon-cocktail-lounge-olde-chinatown-sf-san-francisco", 
-    "bar_name": "Red Dragon Cocktail Lounge-olde chinatown SF", 
-    "lon": -122.477127098722, 
-    "bar_address": "819 Washington St, San Francisco, CA 94133", 
-    "lat": 37.6902071025954, 
-    "bar_num_reviews": 1, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/harveys-san-francisco": {
-    "bar_category_1": "Burgers", 
-    "bar_category_3": "none", 
-    "bar_category_2": "American (Traditional)", 
-    "file_name": "harveys-san-francisco", 
-    "bar_name": "Harvey\u2019s", 
-    "lon": -122.0819804, 
-    "bar_address": "500 Castro St, San Francisco, CA 94114", 
-    "lat": 37.3897143, 
-    "bar_num_reviews": 534, 
-    "bar_neighborhood_1": "Castro", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/tanpopo-san-francisco": {
     "bar_category_1": "Ramen", 
     "bar_category_3": "none", 
@@ -3321,21 +3164,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/place-pigalle-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "place-pigalle-san-francisco", 
-    "bar_name": "Place Pigalle", 
-    "lon": -122.346466737739, 
-    "bar_address": "520 Hayes St, San Francisco, CA 94102", 
-    "lat": 37.9387455398518, 
-    "bar_num_reviews": 304, 
-    "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/mini-bar-sf-san-francisco": {
     "bar_category_1": "Lounges", 
     "bar_category_3": "none", 
@@ -3380,21 +3208,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/velo-rouge-cafe-san-francisco": {
-    "bar_category_1": "Coffee & Tea", 
-    "bar_category_3": "Sandwiches", 
-    "bar_category_2": "Breakfast & Brunch", 
-    "file_name": "velo-rouge-cafe-san-francisco", 
-    "bar_name": "Velo Rouge Cafe", 
-    "lon": -122.497104, 
-    "bar_address": "798 Arguello Blvd, San Francisco, CA 94118", 
-    "lat": 37.591769, 
-    "bar_num_reviews": 519, 
-    "bar_neighborhood_1": "Inner Richmond", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/kate-o-briens-irish-bar-and-grill-san-francisco": {
     "bar_category_1": "Pubs", 
@@ -3531,21 +3344,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/liquid-gold-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Pubs", 
-    "file_name": "liquid-gold-san-francisco", 
-    "bar_name": "Liquid Gold", 
-    "lon": -122.156266469388, 
-    "bar_address": "1040 Hyde St, San Francisco, CA 94109", 
-    "lat": 37.7272484285714, 
-    "bar_num_reviews": 30, 
-    "bar_neighborhood_1": "Nob Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/mangiare-san-francisco": {
     "bar_category_1": "Mediterranean", 
     "bar_category_3": "Italian", 
@@ -3666,19 +3464,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/dickens-fair-at-the-cow-palace-exhibition-halls-daly-city": {
-    "bar_category_1": "Festivals", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "dickens-fair-at-the-cow-palace-exhibition-halls-daly-city", 
-    "bar_name": "Dickens Fair At the Cow Palace Exhibition Halls", 
-    "bar_address": "2600 Geneva Ave, Daly City, CA 94014", 
-    "bar_num_reviews": 183, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/the-mortimer-san-francisco": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "none", 
@@ -3708,21 +3493,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/seniores-pizza-san-francisco": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "seniores-pizza-san-francisco", 
-    "bar_name": "Seniore\u2019s Pizza", 
-    "lon": -122.2430284, 
-    "bar_address": "2415 19th Ave, San Francisco, CA 94116", 
-    "lat": 37.7841448, 
-    "bar_num_reviews": 879, 
-    "bar_neighborhood_1": "Parkside", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/taqueria-el-jalapeno-san-francisco": {
     "bar_category_1": "Mexican", 
@@ -3979,19 +3749,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/gateway-kitchen-daly-city": {
-    "bar_category_1": "Filipino", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "gateway-kitchen-daly-city", 
-    "bar_name": "Gateway Kitchen", 
-    "bar_address": "6165 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 162, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/causwells-san-francisco-5": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "none", 
@@ -4124,36 +3881,6 @@
     "bar_num_reviews": 464, 
     "bar_neighborhood_1": "Financial District", 
     "bar_neighborhood_2": "SoMa", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/the-pub-at-ghirardelli-square-san-francisco-2": {
-    "bar_category_1": "Barbeque", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Pubs", 
-    "file_name": "the-pub-at-ghirardelli-square-san-francisco-2", 
-    "bar_name": "The Pub at Ghirardelli Square", 
-    "lon": -122.513924033434, 
-    "bar_address": "851 Beach St, San Francisco, CA 94109", 
-    "lat": 37.5240743204487, 
-    "bar_num_reviews": 442, 
-    "bar_neighborhood_1": "Fisherman's Wharf", 
-    "bar_neighborhood_2": "Russian Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
-  "/biz/bow-bow-cocktail-lounge-san-francisco": {
-    "bar_category_1": "Karaoke", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Bars", 
-    "file_name": "bow-bow-cocktail-lounge-san-francisco", 
-    "bar_name": "Bow Bow Cocktail Lounge", 
-    "lon": -122.139464351645, 
-    "bar_address": "1155 Grant Ave, San Francisco, CA 94133", 
-    "lat": 37.6787203957129, 
-    "bar_num_reviews": 196, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
@@ -4306,21 +4033,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/savoy-tivoli-san-francisco-2": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "savoy-tivoli-san-francisco-2", 
-    "bar_name": "Savoy Tivoli", 
-    "lon": -122.143471936053, 
-    "bar_address": "1434 Grant Ave, San Francisco, CA 94133", 
-    "lat": 37.6770556353078, 
-    "bar_num_reviews": 201, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/l-ardoise-bistro-san-francisco": {
     "bar_category_1": "French", 
@@ -4787,21 +4499,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
   }, 
-  "/biz/taverna-aventine-san-francisco": {
-    "bar_category_1": "Italian", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Bars", 
-    "file_name": "taverna-aventine-san-francisco", 
-    "bar_name": "Taverna Aventine", 
-    "lon": -122.475072638719, 
-    "bar_address": "582 Washington St, San Francisco, CA 94111", 
-    "lat": 37.6879573205859, 
-    "bar_num_reviews": 278, 
-    "bar_neighborhood_1": "Financial District", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/la-ciccia-san-francisco": {
     "bar_category_1": "Italian", 
     "bar_category_3": "none", 
@@ -4831,19 +4528,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/tomo-sushi-and-teriyaki-daly-city": {
-    "bar_category_1": "Japanese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Sushi Bars", 
-    "file_name": "tomo-sushi-and-teriyaki-daly-city", 
-    "bar_name": "Tomo Sushi & Teriyaki", 
-    "bar_address": "1901 Junipero Serra Blvd, Daly City, CA 94014", 
-    "bar_num_reviews": 285, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/lava-java-san-francisco": {
     "bar_category_1": "Coffee & Tea", 
@@ -4934,21 +4618,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/kilowatt-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "kilowatt-san-francisco", 
-    "bar_name": "Kilowatt", 
-    "lon": -122.3479215, 
-    "bar_address": "3160 16th St, San Francisco, CA 94103", 
-    "lat": 37.9731516, 
-    "bar_num_reviews": 407, 
-    "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/the-alembic-san-francisco": {
     "bar_category_1": "Bars", 
@@ -5235,19 +4904,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/lisas-mexican-restaurant-daly-city-2": {
-    "bar_category_1": "Mexican", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Latin American", 
-    "file_name": "lisas-mexican-restaurant-daly-city-2", 
-    "bar_name": "Lisa\u2019s Mexican Restaurant", 
-    "bar_address": "6582 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 175, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/hills-and-lagoons-san-francisco": {
     "bar_category_1": "Nightlife", 
     "bar_category_3": "none", 
@@ -5367,21 +5023,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/waterbar-san-francisco": {
-    "bar_category_1": "Seafood", 
-    "bar_category_3": "Live/Raw Food", 
-    "bar_category_2": "American (New)", 
-    "file_name": "waterbar-san-francisco", 
-    "bar_name": "Waterbar", 
-    "lon": -122.260817667236, 
-    "bar_address": "399 The Embarcadero S, San Francisco, CA 94105", 
-    "lat": 37.7903235578263, 
-    "bar_num_reviews": 1848, 
-    "bar_neighborhood_1": "Embarcadero", 
-    "bar_neighborhood_2": "SoMa", 
-    "bar_neighborhood_3": "South Beach", 
-    "bar_rating": 3.5
   }, 
   "/biz/sundance-kabuki-cinema-san-francisco": {
     "bar_category_1": "Cinema", 
@@ -5652,19 +5293,6 @@
     "bar_neighborhood_2": "Outer Mission", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/the-slider-haus-daly-city": {
-    "bar_category_1": "American (New)", 
-    "bar_category_3": "Lounges", 
-    "bar_category_2": "Pubs", 
-    "file_name": "the-slider-haus-daly-city", 
-    "bar_name": "The Slider Haus", 
-    "bar_address": "6192 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 1, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 5.0
   }, 
   "/biz/food-inc-san-francisco-2": {
     "bar_category_1": "Mediterranean", 
@@ -6116,21 +5744,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/new-eritrea-restaurant-and-bar-san-francisco": {
-    "bar_category_1": "Ethiopian", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Vegetarian", 
-    "file_name": "new-eritrea-restaurant-and-bar-san-francisco", 
-    "bar_name": "New Eritrea Restaurant & Bar", 
-    "lon": -122.503596846921, 
-    "bar_address": "907 Irving St, San Francisco, CA 94122", 
-    "lat": 37.5364726793443, 
-    "bar_num_reviews": 507, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/spruce-san-francisco": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "none", 
@@ -6326,36 +5939,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/li-po-cocktail-lounge-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "li-po-cocktail-lounge-san-francisco", 
-    "bar_name": "Li Po Cocktail Lounge", 
-    "lon": -122.135295363636, 
-    "bar_address": "916 Grant Ave, San Francisco, CA 94108", 
-    "lat": 37.6802183636364, 
-    "bar_num_reviews": 355, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/r-bar-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "r-bar-san-francisco", 
-    "bar_name": "R Bar", 
-    "lon": -122.271713206971, 
-    "bar_address": "1176 Sutter St, San Francisco, CA 94109", 
-    "lat": 37.8858983121088, 
-    "bar_num_reviews": 352, 
-    "bar_neighborhood_1": "Lower Nob Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/culinary-cafeteria-san-francisco-3": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "none", 
@@ -6370,21 +5953,6 @@
     "bar_neighborhood_2": "Outer Mission", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/mogura-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "mogura-san-francisco", 
-    "bar_name": "Mogura", 
-    "lon": -122.276908702238, 
-    "bar_address": "1581 Webster St, San Francisco, CA 94115", 
-    "lat": 37.7748433158127, 
-    "bar_num_reviews": 30, 
-    "bar_neighborhood_1": "Japantown", 
-    "bar_neighborhood_2": "Lower Pacific Heights", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/bird-and-beckett-books-and-records-san-francisco": {
     "bar_category_1": "Bookstores", 
@@ -6851,21 +6419,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/barrique-san-francisco-2": {
-    "bar_category_1": "Wine Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "barrique-san-francisco-2", 
-    "bar_name": "Barrique", 
-    "lon": -122.484759193823, 
-    "bar_address": "461 Pacific Ave, San Francisco, CA 94133", 
-    "lat": 37.6320738410542, 
-    "bar_num_reviews": 224, 
-    "bar_neighborhood_1": "Financial District", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/the-richmond-san-francisco": {
     "bar_category_1": "Wine Bars", 
     "bar_category_3": "none", 
@@ -6971,21 +6524,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 5.0
   }, 
-  "/biz/sams-san-francisco": {
-    "bar_category_1": "American (Traditional)", 
-    "bar_category_3": "Pizza", 
-    "bar_category_2": "Burgers", 
-    "file_name": "sams-san-francisco", 
-    "bar_name": "Sam\u2019s", 
-    "lon": -122.2480122, 
-    "bar_address": "618 Broadway, San Francisco, CA 94133", 
-    "lat": 37.8414682, 
-    "bar_num_reviews": 317, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "Russian Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/tradr-sams-san-francisco": {
     "bar_category_1": "Dive Bars", 
     "bar_category_3": "none", 
@@ -7000,21 +6538,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/score-bar-and-lounge-san-francisco": {
-    "bar_category_1": "Sports Bars", 
-    "bar_category_3": "Music Venues", 
-    "bar_category_2": "Lounges", 
-    "file_name": "score-bar-and-lounge-san-francisco", 
-    "bar_name": "Score! Bar and Lounge", 
-    "lon": -122.3631892, 
-    "bar_address": "490 Broadway, San Francisco, CA 94133", 
-    "lat": 37.5878347, 
-    "bar_num_reviews": 48, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
   }, 
   "/biz/padrecito-san-francisco": {
     "bar_category_1": "Mexican", 
@@ -7166,21 +6689,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/ebisu-san-francisco": {
-    "bar_category_1": "Sushi Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Japanese", 
-    "file_name": "ebisu-san-francisco", 
-    "bar_name": "Ebisu", 
-    "lon": -122.25112552091, 
-    "bar_address": "1283 9th Ave, San Francisco, CA 94122", 
-    "lat": 37.792511134654, 
-    "bar_num_reviews": 1227, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/purple-kow-san-francisco-2": {
     "bar_category_1": "Cafes", 
     "bar_category_3": "Desserts", 
@@ -7195,19 +6703,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/red-cube-video-production-daly-city": {
-    "bar_category_1": "Social Clubs", 
-    "bar_category_3": "Mass Media", 
-    "bar_category_2": "Music Venues", 
-    "file_name": "red-cube-video-production-daly-city", 
-    "bar_name": "Red Cube Video Production", 
-    "bar_address": "120 Irvington St, Daly City, CA 94014", 
-    "bar_num_reviews": 1437, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/plow-san-francisco": {
     "bar_category_1": "Breakfast & Brunch", 
@@ -7464,21 +6959,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/trocadero-clubhouse-san-francisco": {
-    "bar_category_1": "Venues & Event Spaces", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "trocadero-clubhouse-san-francisco", 
-    "bar_name": "Trocadero Clubhouse", 
-    "lon": -122.2430284, 
-    "bar_address": "2750 19th Ave, San Francisco, CA 94110", 
-    "lat": 37.7841448, 
-    "bar_num_reviews": 16, 
-    "bar_neighborhood_1": "West Portal", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/san-francisco-athletic-club-san-francisco": {
     "bar_category_1": "Sports Bars", 
     "bar_category_3": "Hot Dogs", 
@@ -7614,21 +7094,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/o-keeffes-bar-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "o-keeffes-bar-san-francisco", 
-    "bar_name": "O\u2019Keeffe\u2019s Bar", 
-    "lon": -122.493443, 
-    "bar_address": "598 5th Ave, San Francisco, CA 94118", 
-    "lat": 37.642042, 
-    "bar_num_reviews": 62, 
-    "bar_neighborhood_1": "Inner Richmond", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/paina-lounge-and-restaurant-san-francisco": {
     "bar_category_1": "Hawaiian", 
     "bar_category_3": "Asian Fusion", 
@@ -7670,21 +7135,6 @@
     "lat": 37.7929056, 
     "bar_num_reviews": 238, 
     "bar_neighborhood_1": "Financial District", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/marcellos-pizza-san-francisco": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "marcellos-pizza-san-francisco", 
-    "bar_name": "Marcello\u2019s Pizza", 
-    "lon": -122.0810917, 
-    "bar_address": "420 Castro St, San Francisco, CA 94114", 
-    "lat": 37.3909084, 
-    "bar_num_reviews": 535, 
-    "bar_neighborhood_1": "Castro", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
@@ -7944,21 +7394,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/mr-smiths-san-francisco": {
-    "bar_category_1": "Dance Clubs", 
-    "bar_category_3": "Cocktail Bars", 
-    "bar_category_2": "Lounges", 
-    "file_name": "mr-smiths-san-francisco", 
-    "bar_name": "Mr Smith\u2019s", 
-    "lon": -122.3629683, 
-    "bar_address": "34 7th St, San Francisco, CA 94103", 
-    "lat": 37.9316193, 
-    "bar_num_reviews": 867, 
-    "bar_neighborhood_1": "SoMa", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/yu-zen-san-francisco": {
     "bar_category_1": "Japanese", 
     "bar_category_3": "none", 
@@ -8045,19 +7480,6 @@
     "lat": 37.7618948, 
     "bar_num_reviews": 1709, 
     "bar_neighborhood_1": "Outer Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/tselogs-daly-city": {
-    "bar_category_1": "Filipino", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "tselogs-daly-city", 
-    "bar_name": "Tselogs", 
-    "bar_address": "6055 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 601, 
-    "bar_neighborhood_1": "none", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
@@ -8557,21 +7979,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/chelsea-place-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "chelsea-place-san-francisco", 
-    "bar_name": "Chelsea Place", 
-    "lon": -122.079187295045, 
-    "bar_address": "641 Bush St, San Francisco, CA 94108", 
-    "lat": 37.3864128600113, 
-    "bar_num_reviews": 120, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "Union Square", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/tekka-japanese-restaurant-san-francisco": {
     "bar_category_1": "Japanese", 
     "bar_category_3": "none", 
@@ -8916,21 +8323,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/bill-graham-civic-auditorium-san-francisco": {
-    "bar_category_1": "Venues & Event Spaces", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Music Venues", 
-    "file_name": "bill-graham-civic-auditorium-san-francisco", 
-    "bar_name": "Bill Graham Civic Auditorium", 
-    "lon": -122.534808, 
-    "bar_address": "99 Grove Street, San Francisco, CA 94102", 
-    "lat": 37.964418, 
-    "bar_num_reviews": 269, 
-    "bar_neighborhood_1": "Civic Center", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/the-brazen-head-san-francisco": {
     "bar_category_1": "Steakhouses", 
@@ -9352,34 +8744,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/thai-power-restaurant-daly-city-2": {
-    "bar_category_1": "Thai", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "thai-power-restaurant-daly-city-2", 
-    "bar_name": "Thai Power Restaurant", 
-    "bar_address": "6057 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 21, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 2.0
-  }, 
-  "/biz/game-san-francisco-3": {
-    "bar_category_1": "American (New)", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "game-san-francisco-3", 
-    "bar_name": "Game", 
-    "lon": -122.079391973263, 
-    "bar_address": "648 Bush St, San Francisco, CA 94108", 
-    "lat": 37.3864584345213, 
-    "bar_num_reviews": 22, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/rosamunde-sausage-grill-san-francisco-2": {
     "bar_category_1": "Hot Dogs", 
     "bar_category_3": "Breakfast & Brunch", 
@@ -9530,21 +8894,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/maggie-mcgraws-pub-san-francisco": {
-    "bar_category_1": "Pubs", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "maggie-mcgraws-pub-san-francisco", 
-    "bar_name": "Maggie McGraw\u2019s Pub", 
-    "lon": -122.276317241062, 
-    "bar_address": "1353 Grant St, San Francisco, CA 94133", 
-    "lat": 37.8815131695612, 
-    "bar_num_reviews": 2, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 5.0
-  }, 
   "/biz/bistro-gambrinus-san-francisco": {
     "bar_category_1": "Russian", 
     "bar_category_3": "German", 
@@ -9691,34 +9040,6 @@
     "lat": 37.751273244898, 
     "bar_num_reviews": 453, 
     "bar_neighborhood_1": "Noe Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
-  "/biz/the-grove-hayes-san-francisco": {
-    "bar_category_1": "American (New)", 
-    "bar_category_3": "Sandwiches", 
-    "bar_category_2": "Cafes", 
-    "file_name": "the-grove-hayes-san-francisco", 
-    "bar_name": "The Grove Hayes", 
-    "lon": -122.5357115, 
-    "bar_address": "301 Hayes St, San Francisco, CA 94102", 
-    "lat": 37.9722944, 
-    "bar_num_reviews": 567, 
-    "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
-  "/biz/the-annex-daly-city": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "the-annex-daly-city", 
-    "bar_name": "The Annex", 
-    "bar_address": "6282 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 6, 
-    "bar_neighborhood_1": "none", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
@@ -9888,19 +9209,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/the-hideout-bar-and-lounge-daly-city": {
-    "bar_category_1": "Dance Clubs", 
-    "bar_category_3": "Cocktail Bars", 
-    "bar_category_2": "Lounges", 
-    "file_name": "the-hideout-bar-and-lounge-daly-city", 
-    "bar_name": "The Hideout Bar & Lounge", 
-    "bar_address": "6192 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 22, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/amsterdam-caf%C3%A9-san-francisco-2": {
     "bar_category_1": "Bars", 
     "bar_category_3": "none", 
@@ -10006,21 +9314,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/sinbads-pier2-restaurant-san-francisco-2": {
-    "bar_category_1": "Seafood", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "sinbads-pier2-restaurant-san-francisco-2", 
-    "bar_name": "Sinbad\u2019s Pier2 Restaurant", 
-    "lon": -122.261278536085, 
-    "bar_address": "141 The Embarcadero, San Francisco, CA 94111", 
-    "lat": 37.7904908167937, 
-    "bar_num_reviews": 478, 
-    "bar_neighborhood_1": "Embarcadero", 
-    "bar_neighborhood_2": "SoMa", 
-    "bar_neighborhood_3": "South Beach", 
-    "bar_rating": 2.0
-  }, 
   "/biz/san-francisco-scottish-rite-masonic-center-auditorium-and-theater-san-francisco": {
     "bar_category_1": "Venues & Event Spaces,         Music Venues", 
     "bar_category_3": "Community Service/Non-Profit", 
@@ -10051,21 +9344,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/ssisso-san-francisco": {
-    "bar_category_1": "Korean", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "ssisso-san-francisco", 
-    "bar_name": "Ssisso", 
-    "lon": -122.0725447, 
-    "bar_address": "1700A Post St, San Francisco, CA 94115", 
-    "lat": 37.3782478, 
-    "bar_num_reviews": 283, 
-    "bar_neighborhood_1": "Japantown", 
-    "bar_neighborhood_2": "Lower Pacific Heights", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/bottom-of-the-hill-san-francisco": {
     "bar_category_1": "Music Venues", 
     "bar_category_3": "none", 
@@ -10093,21 +9371,6 @@
     "bar_num_reviews": 410, 
     "bar_neighborhood_1": "Russian Hill", 
     "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
-  "/biz/fiddlers-green-san-francisco": {
-    "bar_category_1": "Irish", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Pubs", 
-    "file_name": "fiddlers-green-san-francisco", 
-    "bar_name": "Fiddler\u2019s Green", 
-    "lon": -122.374902198912, 
-    "bar_address": "1333 Columbus Ave, San Francisco, CA 94133", 
-    "lat": 37.5808424262702, 
-    "bar_num_reviews": 291, 
-    "bar_neighborhood_1": "Fisherman's Wharf", 
-    "bar_neighborhood_2": "Russian Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
@@ -10156,21 +9419,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/nojo-san-francisco": {
-    "bar_category_1": "Japanese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "nojo-san-francisco", 
-    "bar_name": "Nojo", 
-    "lon": -122.081343497801, 
-    "bar_address": "231 Franklin St, San Francisco, CA 94102", 
-    "lat": 37.3942109265728, 
-    "bar_num_reviews": 353, 
-    "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/knuckles-at-the-wharf-san-francisco-2": {
     "bar_category_1": "Sports Bars", 
     "bar_category_3": "Breakfast & Brunch", 
@@ -10185,21 +9433,6 @@
     "bar_neighborhood_2": "North Beach/Telegraph Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
-  }, 
-  "/biz/bistro-central-parc-san-francisco": {
-    "bar_category_1": "French", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Breakfast & Brunch", 
-    "file_name": "bistro-central-parc-san-francisco", 
-    "bar_name": "Bistro Central Parc", 
-    "lon": -122.477539, 
-    "bar_address": "560 Central Ave, San Francisco, CA 94117", 
-    "lat": 38.315598, 
-    "bar_num_reviews": 664, 
-    "bar_neighborhood_1": "NoPa", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
   }, 
   "/biz/taqueria-dos-charros-san-francisco-2": {
     "bar_category_1": "Mexican", 
@@ -10455,21 +9688,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/palm-house-san-francisco": {
-    "bar_category_1": "Caribbean", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "palm-house-san-francisco", 
-    "bar_name": "Palm House", 
-    "lon": -122.286579312682, 
-    "bar_address": "2032 Union St, San Francisco, CA 94123", 
-    "lat": 37.8146385131289, 
-    "bar_num_reviews": 155, 
-    "bar_neighborhood_1": "Marina/Cow Hollow", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/jaspers-corner-tap-san-francisco": {
     "bar_category_1": "American (New)", 
@@ -10951,21 +10169,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/reds-place-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "reds-place-san-francisco", 
-    "bar_name": "Red\u2019s Place", 
-    "lon": -122.268264554952, 
-    "bar_address": "672 Jackson St, San Francisco, CA 94133", 
-    "lat": 37.7970070009453, 
-    "bar_num_reviews": 52, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/social-kitchen-and-brewery-san-francisco": {
     "bar_category_1": "Breweries", 
     "bar_category_3": "none", 
@@ -11026,21 +10229,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/bamboo-hut-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "bamboo-hut-san-francisco", 
-    "bar_name": "Bamboo Hut", 
-    "lon": -122.275387094991, 
-    "bar_address": "479 Broadway, San Francisco, CA 94133", 
-    "lat": 37.7979655956404, 
-    "bar_num_reviews": 276, 
-    "bar_neighborhood_1": "Financial District", 
-    "bar_neighborhood_2": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/cafe-francisco-san-francisco-2": {
     "bar_category_1": "Coffee & Tea", 
     "bar_category_3": "Wine Bars", 
@@ -11071,21 +10259,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/russells-room-bourbon-and-branch-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "russells-room-bourbon-and-branch-san-francisco", 
-    "bar_name": "Russells Room @ Bourbon and Branch", 
-    "lon": -122.5650191, 
-    "bar_address": "501 Jones St, San Francisco, CA 94102", 
-    "lat": 37.9707559, 
-    "bar_num_reviews": 29, 
-    "bar_neighborhood_1": "Tenderloin", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/q-bar-san-francisco": {
     "bar_category_1": "Gay Bars", 
     "bar_category_3": "none", 
@@ -11100,36 +10273,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/aliment-san-francisco": {
-    "bar_category_1": "American (Traditional)", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "aliment-san-francisco", 
-    "bar_name": "Aliment", 
-    "lon": -122.079921836003, 
-    "bar_address": "786 Bush St, San Francisco, CA 94108", 
-    "lat": 37.3856778141483, 
-    "bar_num_reviews": 208, 
-    "bar_neighborhood_1": "Nob Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/gestalt-haus-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "German", 
-    "file_name": "gestalt-haus-san-francisco", 
-    "bar_name": "Gestalt Haus", 
-    "lon": -122.3479215, 
-    "bar_address": "3159 16th St, San Francisco, CA 94110", 
-    "lat": 37.9731516, 
-    "bar_num_reviews": 497, 
-    "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/crepes-on-cole-san-francisco": {
     "bar_category_1": "Creperies", 
@@ -11356,19 +10499,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/via-mare-of-america-daly-city": {
-    "bar_category_1": "Filipino", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "via-mare-of-america-daly-city", 
-    "bar_name": "Via Mare Of America", 
-    "bar_address": "6423 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 95, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/wine-kitchen-san-francisco": {
     "bar_category_1": "Tapas/Small Plates", 
     "bar_category_3": "none", 
@@ -11429,19 +10559,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/tao-yin-restaurant-daly-city": {
-    "bar_category_1": "Chinese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Japanese", 
-    "file_name": "tao-yin-restaurant-daly-city", 
-    "bar_name": "Tao Yin Restaurant", 
-    "bar_address": "6288 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 46, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
-  }, 
   "/biz/louis-san-francisco-2": {
     "bar_category_1": "Diners", 
     "bar_category_3": "none", 
@@ -11486,19 +10603,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/vals-steak-house-restaurant-and-lounge-daly-city": {
-    "bar_category_1": "Breakfast & Brunch", 
-    "bar_category_3": "American (Traditional)", 
-    "bar_category_2": "Lounges", 
-    "file_name": "vals-steak-house-restaurant-and-lounge-daly-city", 
-    "bar_name": "Val\u2019s Steak House Restaurant & Lounge", 
-    "bar_address": "2468 Junipero Serra Blvd, Daly City, CA 94015", 
-    "bar_num_reviews": 212, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/tradition-san-francisco": {
     "bar_category_1": "Bars", 
@@ -11665,21 +10769,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/the-american-grilled-cheese-kitchen-san-francisco": {
-    "bar_category_1": "Sandwiches", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "the-american-grilled-cheese-kitchen-san-francisco", 
-    "bar_name": "The American Grilled Cheese Kitchen", 
-    "lon": -122.5139181, 
-    "bar_address": "1 S Park St, San Francisco, CA 94107", 
-    "lat": 37.9739826, 
-    "bar_num_reviews": 1177, 
-    "bar_neighborhood_1": "SoMa", 
-    "bar_neighborhood_2": "South Beach", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/spitfire-rose-san-francisco": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "Ethiopian", 
@@ -11800,21 +10889,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/bacchus-kirk-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "bacchus-kirk-san-francisco", 
-    "bar_name": "Bacchus Kirk", 
-    "lon": -122.080364926293, 
-    "bar_address": "925 Bush St, San Francisco, CA 94109", 
-    "lat": 37.3846185962645, 
-    "bar_num_reviews": 203, 
-    "bar_neighborhood_1": "Lower Nob Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/jakes-steaks-san-francisco": {
     "bar_category_1": "Sandwiches", 
     "bar_category_3": "Cheesesteaks", 
@@ -11829,34 +10903,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/auroras-restaurant-daly-city": {
-    "bar_category_1": "Filipino", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "auroras-restaurant-daly-city", 
-    "bar_name": "Aurora\u2019s Restaurant", 
-    "bar_address": "6185 Mission Street, Daly City, CA 94014", 
-    "bar_num_reviews": 2, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 2.5
-  }, 
-  "/biz/maggie-mcgarrys-san-francisco": {
-    "bar_category_1": "Music Venues", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Pubs", 
-    "file_name": "maggie-mcgarrys-san-francisco", 
-    "bar_name": "Maggie McGarry\u2019s", 
-    "lon": -122.142006541999, 
-    "bar_address": "1353 Grant Ave, San Francisco, CA 94133", 
-    "lat": 37.677690389283, 
-    "bar_num_reviews": 213, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/boy-bar-san-francisco": {
     "bar_category_1": "Gay Bars", 
@@ -11917,21 +10963,6 @@
     "bar_neighborhood_2": "North Beach/Telegraph Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/delancey-street-restaurant-san-francisco": {
-    "bar_category_1": "American (Traditional)", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Breakfast & Brunch", 
-    "file_name": "delancey-street-restaurant-san-francisco", 
-    "bar_name": "Delancey Street Restaurant", 
-    "lon": -122.259680195743, 
-    "bar_address": "600 The Embarcadero, San Francisco, CA 94107", 
-    "lat": 37.7898263100796, 
-    "bar_num_reviews": 1077, 
-    "bar_neighborhood_1": "SoMa", 
-    "bar_neighborhood_2": "South Beach", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/house-of-shields-san-francisco": {
     "bar_category_1": "Bars", 
@@ -12008,21 +11039,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
   }, 
-  "/biz/slate-bar-san-francisco": {
-    "bar_category_1": "Dance Clubs", 
-    "bar_category_3": "Cocktail Bars", 
-    "bar_category_2": "Pool Halls", 
-    "file_name": "slate-bar-san-francisco", 
-    "bar_name": "Slate Bar", 
-    "lon": -122.347946732289, 
-    "bar_address": "2925 16th St, San Francisco, CA 94103", 
-    "lat": 37.9734012241423, 
-    "bar_num_reviews": 69, 
-    "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/hard-knox-cafe-san-francisco-2": {
     "bar_category_1": "Soul Food", 
     "bar_category_3": "none", 
@@ -12053,21 +11069,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 5.0
   }, 
-  "/biz/abv-san-francisco-2": {
-    "bar_category_1": "Cocktail Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "abv-san-francisco-2", 
-    "bar_name": "ABV", 
-    "lon": -122.3479215, 
-    "bar_address": "3174 16th St, San Francisco, CA 94103", 
-    "lat": 37.9731516, 
-    "bar_num_reviews": 87, 
-    "bar_neighborhood_1": "Mission", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/rolling-out-san-francisco": {
     "bar_category_1": "Bakeries", 
     "bar_category_3": "Coffee & Tea", 
@@ -12079,21 +11080,6 @@
     "lat": 37.7427405918367, 
     "bar_num_reviews": 196, 
     "bar_neighborhood_1": "Parkside", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
-  "/biz/bond-san-francisco-2": {
-    "bar_category_1": "Cocktail Bars", 
-    "bar_category_3": "Wine Bars", 
-    "bar_category_2": "Lounges", 
-    "file_name": "bond-san-francisco-2", 
-    "bar_name": "Bond", 
-    "lon": -122.347709789527, 
-    "bar_address": "3079 16th St, San Francisco, CA 94103", 
-    "lat": 37.974051548727, 
-    "bar_num_reviews": 18, 
-    "bar_neighborhood_1": "Mission", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
@@ -12203,36 +11189,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/jannah-yaya-cuisine-san-francisco": {
-    "bar_category_1": "Middle Eastern", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "jannah-yaya-cuisine-san-francisco", 
-    "bar_name": "Jannah/Yaya cuisine", 
-    "lon": -122.140115580233, 
-    "bar_address": "1775 Fulton St, San Francisco, CA 94117", 
-    "lat": 37.4416665, 
-    "bar_num_reviews": 234, 
-    "bar_neighborhood_1": "NoPa", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/howards-cafe-san-francisco": {
-    "bar_category_1": "American (Traditional)", 
-    "bar_category_3": "Breakfast & Brunch", 
-    "bar_category_2": "Diners", 
-    "file_name": "howards-cafe-san-francisco", 
-    "bar_name": "Howard\u2019s Cafe", 
-    "lon": -122.251032713359, 
-    "bar_address": "1309 9th Ave, San Francisco, CA 94122", 
-    "lat": 37.7925757598076, 
-    "bar_num_reviews": 307, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/hobsons-choice-san-francisco": {
     "bar_category_1": "Bars", 
     "bar_category_3": "none", 
@@ -12308,21 +11264,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/tia-margarita-mexican-restaurant-san-francisco": {
-    "bar_category_1": "Mexican", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Cocktail Bars", 
-    "file_name": "tia-margarita-mexican-restaurant-san-francisco", 
-    "bar_name": "Tia Margarita Mexican Restaurant", 
-    "lon": -122.2430284, 
-    "bar_address": "300 19th Ave, San Francisco, CA 94121", 
-    "lat": 37.7841448, 
-    "bar_num_reviews": 474, 
-    "bar_neighborhood_1": "Outer Richmond", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/murphys-pub-san-francisco": {
     "bar_category_1": "Pubs", 
     "bar_category_3": "Fish & Chips", 
@@ -12383,21 +11324,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
   }, 
-  "/biz/marengo-on-union-san-francisco": {
-    "bar_category_1": "American (Traditional)", 
-    "bar_category_3": "Sandwiches", 
-    "bar_category_2": "Salad", 
-    "file_name": "marengo-on-union-san-francisco", 
-    "bar_name": "Marengo on Union", 
-    "lon": -122.286618701166, 
-    "bar_address": "1980 Union St, San Francisco, CA 94123", 
-    "lat": 37.81453196223, 
-    "bar_num_reviews": 225, 
-    "bar_neighborhood_1": "Marina/Cow Hollow", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/piccino-san-francisco": {
     "bar_category_1": "Italian", 
     "bar_category_3": "none", 
@@ -12413,21 +11339,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/bus-stop-san-francisco": {
-    "bar_category_1": "Sports Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "bus-stop-san-francisco", 
-    "bar_name": "Bus Stop", 
-    "lon": -122.287021, 
-    "bar_address": "1901 Union St, San Francisco, CA 94123", 
-    "lat": 37.813898, 
-    "bar_num_reviews": 289, 
-    "bar_neighborhood_1": "Marina/Cow Hollow", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/901-columbus-cafe-san-francisco-2": {
     "bar_category_1": "Coffee & Tea", 
     "bar_category_3": "none", 
@@ -12442,21 +11353,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/mamitas-san-francisco": {
-    "bar_category_1": "Mexican", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "mamitas-san-francisco", 
-    "bar_name": "Mamita\u2019s", 
-    "lon": -122.514456000584, 
-    "bar_address": "358 Beach St, San Francisco, CA 94133", 
-    "lat": 37.5241149352592, 
-    "bar_num_reviews": 62, 
-    "bar_neighborhood_1": "Fisherman's Wharf", 
-    "bar_neighborhood_2": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/bullshead-restaurant-san-francisco": {
     "bar_category_1": "Steakhouses", 
@@ -13148,21 +12044,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
   }, 
-  "/biz/crawstation-san-francisco-3": {
-    "bar_category_1": "Seafood", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Cajun/Creole", 
-    "file_name": "crawstation-san-francisco-3", 
-    "bar_name": "Crawstation", 
-    "lon": -122.250794314113, 
-    "bar_address": "1336 9th Ave, San Francisco, CA 94122", 
-    "lat": 37.7925216713245, 
-    "bar_num_reviews": 678, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/swan-oyster-depot-san-francisco": {
     "bar_category_1": "Seafood", 
     "bar_category_3": "none", 
@@ -13400,21 +12281,6 @@
     "bar_num_reviews": 661, 
     "bar_neighborhood_1": "Alamo Square", 
     "bar_neighborhood_2": "NoPa", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/blueprint-tap-room-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "Gastropubs", 
-    "bar_category_2": "American (New)", 
-    "file_name": "blueprint-tap-room-san-francisco", 
-    "bar_name": "Blueprint Tap Room", 
-    "lon": -122.2544156, 
-    "bar_address": "680 8th St, San Francisco, CA 94103", 
-    "lat": 37.7908043, 
-    "bar_num_reviews": 59, 
-    "bar_neighborhood_1": "SoMa", 
-    "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
@@ -13883,21 +12749,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
   }, 
-  "/biz/aces-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "aces-san-francisco", 
-    "bar_name": "Ace\u2019s", 
-    "lon": -122.253111104478, 
-    "bar_address": "998 Sutter St, San Francisco, CA 94109", 
-    "lat": 38.1041845820896, 
-    "bar_num_reviews": 238, 
-    "bar_neighborhood_1": "Lower Nob Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/vesuvio-cafe-san-francisco": {
     "bar_category_1": "Lounges", 
     "bar_category_3": "none", 
@@ -13958,21 +12809,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
   }, 
-  "/biz/pianofight-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "Performing Arts", 
-    "bar_category_2": "American (New)", 
-    "file_name": "pianofight-san-francisco", 
-    "bar_name": "PianoFight", 
-    "lon": -122.532235842363, 
-    "bar_address": "144 Taylor St, San Francisco, CA 94102", 
-    "lat": 37.9683567724026, 
-    "bar_num_reviews": 6, 
-    "bar_neighborhood_1": "Tenderloin", 
-    "bar_neighborhood_2": "Union Square", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 5.0
-  }, 
   "/biz/grubstake-san-francisco": {
     "bar_category_1": "Burgers", 
     "bar_category_3": "Portuguese", 
@@ -14018,19 +12854,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
   }, 
-  "/biz/tanis-kitchen-daly-city": {
-    "bar_category_1": "Japanese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "tanis-kitchen-daly-city", 
-    "bar_name": "Tani\u2019s Kitchen", 
-    "bar_address": "32 Park Plz Dr, Daly City, CA 94015", 
-    "bar_num_reviews": 910, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/the-cavalier-san-francisco": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "Cocktail Bars", 
@@ -14061,21 +12884,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/halu-san-francisco": {
-    "bar_category_1": "Japanese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "halu-san-francisco", 
-    "bar_name": "Halu", 
-    "lon": -122.257811292914, 
-    "bar_address": "312 8th Ave, San Francisco, CA 94118", 
-    "lat": 37.7886245394984, 
-    "bar_num_reviews": 624, 
-    "bar_neighborhood_1": "Inner Richmond", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/biscuits-and-blue-s-san-francisco": {
     "bar_category_1": "Jazz & Blues", 
     "bar_category_3": "Lounges", 
@@ -14105,19 +12913,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/boulevard-cafe-daly-city": {
-    "bar_category_1": "American (New)", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "boulevard-cafe-daly-city", 
-    "bar_name": "Boulevard Cafe", 
-    "bar_address": "2 Poncetta Dr, Daly City, CA 94015", 
-    "bar_num_reviews": 1044, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/mission-bar-san-francisco": {
     "bar_category_1": "Dive Bars", 
@@ -14163,19 +12958,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/burgermeister-daly-city": {
-    "bar_category_1": "Burgers", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "burgermeister-daly-city", 
-    "bar_name": "Burgermeister", 
-    "bar_address": "507 Westlake Ctr, Daly City, CA 94014", 
-    "bar_num_reviews": 498, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/hot-pot-garden-san-francisco": {
     "bar_category_1": "Chinese", 
@@ -14342,21 +13124,6 @@
     "bar_neighborhood_3": "North Beach/Telegraph Hill", 
     "bar_rating": 3.5
   }, 
-  "/biz/antologia-vinoteca-san-francisco-2": {
-    "bar_category_1": "Wine Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Latin American", 
-    "file_name": "antologia-vinoteca-san-francisco-2", 
-    "bar_name": "Antologia Vinoteca", 
-    "lon": -122.275230998816, 
-    "bar_address": "515 Broadway, San Francisco, CA 94133", 
-    "lat": 37.7982210017765, 
-    "bar_num_reviews": 47, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/one-market-restaurant-san-francisco-2": {
     "bar_category_1": "Restaurants", 
     "bar_category_3": "none", 
@@ -14399,21 +13166,6 @@
     "bar_num_reviews": 122, 
     "bar_neighborhood_1": "Mission", 
     "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/trattoria-contadina-san-francisco": {
-    "bar_category_1": "Italian", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "trattoria-contadina-san-francisco", 
-    "bar_name": "Trattoria Contadina", 
-    "lon": -122.345548, 
-    "bar_address": "1800 Mason St, San Francisco, CA 94133", 
-    "lat": 37.956593, 
-    "bar_num_reviews": 870, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "Russian Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
@@ -14717,21 +13469,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/cybelles-front-room-san-francisco": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Italian", 
-    "file_name": "cybelles-front-room-san-francisco", 
-    "bar_name": "Cybelle\u2019s Front Room", 
-    "lon": -122.250761, 
-    "bar_address": "1385 9th Ave, San Francisco, CA 94122", 
-    "lat": 37.792764, 
-    "bar_num_reviews": 304, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
   "/biz/bimbos-365-club-san-francisco": {
     "bar_category_1": "Venues & Event Spaces", 
     "bar_category_3": "none", 
@@ -14776,21 +13513,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/cinnabar-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "cinnabar-san-francisco", 
-    "bar_name": "Cinnabar", 
-    "lon": -122.05383938783, 
-    "bar_address": "397 Ellis St, San Francisco, CA 94102", 
-    "lat": 37.395825239003, 
-    "bar_num_reviews": 25, 
-    "bar_neighborhood_1": "Tenderloin", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/monroe-san-francisco": {
     "bar_category_1": "Lounges", 
@@ -14881,21 +13603,6 @@
     "bar_neighborhood_2": "Western Addition", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 2.5
-  }, 
-  "/biz/tupelo-san-francisco": {
-    "bar_category_1": "Southern", 
-    "bar_category_3": "Music Venues", 
-    "bar_category_2": "Bars", 
-    "file_name": "tupelo-san-francisco", 
-    "bar_name": "Tupelo", 
-    "lon": -122.141816848649, 
-    "bar_address": "1337 Grant Ave, San Francisco, CA 94133", 
-    "lat": 37.6777674710254, 
-    "bar_num_reviews": 129, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/mums-home-of-shabu-shabu-san-francisco-2": {
     "bar_category_1": "Japanese", 
@@ -15017,19 +13724,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/cafe-durango-daly-city": {
-    "bar_category_1": "Mexican", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "cafe-durango-daly-city", 
-    "bar_name": "Cafe Durango", 
-    "bar_address": "6286 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 35, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
-  }, 
   "/biz/biergarten-san-francisco": {
     "bar_category_1": "German", 
     "bar_category_3": "none", 
@@ -15041,21 +13735,6 @@
     "lat": 37.7760471, 
     "bar_num_reviews": 324, 
     "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/red-dog-restaurant-and-bar-san-francisco": {
-    "bar_category_1": "American (New)", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Bars", 
-    "file_name": "red-dog-restaurant-and-bar-san-francisco", 
-    "bar_name": "Red Dog Restaurant & Bar", 
-    "lon": -122.115563445378, 
-    "bar_address": "303 2nd St, San Francisco, CA 94107", 
-    "lat": 37.37732055, 
-    "bar_num_reviews": 140, 
-    "bar_neighborhood_1": "SoMa", 
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
@@ -15089,19 +13768,6 @@
     "bar_neighborhood_2": "NoPa", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/blue-line-pizza-daly-city": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Gluten-Free", 
-    "file_name": "blue-line-pizza-daly-city", 
-    "bar_name": "Blue Line Pizza", 
-    "bar_address": "511 Westlake Ctr, Daly City, CA 94015", 
-    "bar_num_reviews": 127, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
   }, 
   "/biz/the-residence-san-francisco": {
     "bar_category_1": "Lounges", 
@@ -15163,36 +13829,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.0
   }, 
-  "/biz/cantina-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Cocktail Bars", 
-    "file_name": "cantina-san-francisco", 
-    "bar_name": "Cantina", 
-    "lon": -122.253237625, 
-    "bar_address": "580 Sutter St, San Francisco, CA 94102", 
-    "lat": 38.0988805, 
-    "bar_num_reviews": 788, 
-    "bar_neighborhood_1": "Union Square", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
-  "/biz/brass-tacks-san-francisco-2": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "brass-tacks-san-francisco-2", 
-    "bar_name": "Brass Tacks", 
-    "lon": -122.5357115, 
-    "bar_address": "488 A Hayes St, San Francisco, CA 94102", 
-    "lat": 37.9722944, 
-    "bar_num_reviews": 82, 
-    "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/wayfare-tavern-san-francisco-2": {
     "bar_category_1": "American (Traditional)", 
     "bar_category_3": "none", 
@@ -15223,21 +13859,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 2.0
   }, 
-  "/biz/buddha-lounge-san-francisco": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "buddha-lounge-san-francisco", 
-    "bar_name": "Buddha Lounge", 
-    "lon": -122.135182727273, 
-    "bar_address": "901 Grant Ave, San Francisco, CA 94108", 
-    "lat": 37.6804487272727, 
-    "bar_num_reviews": 228, 
-    "bar_neighborhood_1": "Chinatown", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/busters-cheesesteak-san-francisco": {
     "bar_category_1": "American (Traditional)", 
     "bar_category_3": "none", 
@@ -15267,19 +13888,6 @@
     "bar_neighborhood_2": "Hayes Valley", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/little-yangon-daly-city": {
-    "bar_category_1": "Burmese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "little-yangon-daly-city", 
-    "bar_name": "Little Yangon", 
-    "bar_address": "6318 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 326, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
   }, 
   "/biz/noeteca-san-francisco": {
     "bar_category_1": "Wine Bars", 
@@ -15385,21 +13993,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/wilson-and-wilson-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "wilson-and-wilson-san-francisco", 
-    "bar_name": "Wilson & Wilson", 
-    "lon": -122.5650191, 
-    "bar_address": "505 Jones St, San Francisco, CA 94102", 
-    "lat": 37.9707559, 
-    "bar_num_reviews": 207, 
-    "bar_neighborhood_1": "Tenderloin", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
   }, 
   "/biz/caffe-terzetto-san-francisco": {
     "bar_category_1": "Cafes", 
@@ -15536,21 +14129,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/uncle-natans-cafe-san-francisco": {
-    "bar_category_1": "Hookah Bars", 
-    "bar_category_3": "Cafes", 
-    "bar_category_2": "Sports Bars", 
-    "file_name": "uncle-natans-cafe-san-francisco", 
-    "bar_name": "Uncle Natan\u2019s Cafe", 
-    "lon": -122.0725447, 
-    "bar_address": "Post St, San Francisco, CA", 
-    "lat": 37.3782478, 
-    "bar_num_reviews": 7, 
-    "bar_neighborhood_1": "Lower Pacific Heights", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.5
-  }, 
   "/biz/capps-corner-san-francisco": {
     "bar_category_1": "Italian", 
     "bar_category_3": "none", 
@@ -15580,19 +14158,6 @@
     "bar_neighborhood_2": "Presidio Heights", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/ginos-club-daly-city": {
-    "bar_category_1": "Dive Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "ginos-club-daly-city", 
-    "bar_name": "Gino\u2019s Club", 
-    "bar_address": "7175 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 11, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 2.5
   }, 
   "/biz/nova-bar-and-restaurant-san-francisco": {
     "bar_category_1": "Bars", 
@@ -15638,19 +14203,6 @@
     "bar_neighborhood_2": "Mission", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/kome-japanese-seafood-and-grill-buffet-daly-city": {
-    "bar_category_1": "Buffets", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Japanese", 
-    "file_name": "kome-japanese-seafood-and-grill-buffet-daly-city", 
-    "bar_name": "Kome Japanese Seafood & Grill Buffet", 
-    "bar_address": "1901 Junipero Serra Blvd, Daly City, CA 94014", 
-    "bar_num_reviews": 1437, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/vega-san-francisco-2": {
     "bar_category_1": "Italian", 
@@ -16417,19 +14969,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 2.5
   }, 
-  "/biz/little-fire-pot-daly-city": {
-    "bar_category_1": "Chinese", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "little-fire-pot-daly-city", 
-    "bar_name": "Little Fire Pot", 
-    "bar_address": "215 Lake Merced Blvd, Daly City, CA 94015", 
-    "bar_num_reviews": 282, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
-  }, 
   "/biz/district-san-francisco": {
     "bar_category_1": "Wine Bars", 
     "bar_category_3": "Lounges", 
@@ -16625,21 +15164,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
-  "/biz/carbon-san-francisco": {
-    "bar_category_1": "Lounges", 
-    "bar_category_3": "Dance Clubs", 
-    "bar_category_2": "Venues & Event Spaces", 
-    "file_name": "carbon-san-francisco", 
-    "bar_name": "Carbon", 
-    "lon": -122.393579642829, 
-    "bar_address": "383 Bay St, San Francisco, CA 94133", 
-    "lat": 37.6097190677337, 
-    "bar_num_reviews": 84, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/domo-san-francisco": {
     "bar_category_1": "Sushi Bars", 
     "bar_category_3": "none", 
@@ -16730,21 +15254,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/roka-bar-san-francisco": {
-    "bar_category_1": "Cocktail Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Lounges", 
-    "file_name": "roka-bar-san-francisco", 
-    "bar_name": "Roka Bar", 
-    "lon": -122.075196, 
-    "bar_address": "801 Montgomery St, San Francisco, CA 94133", 
-    "lat": 37.383039, 
-    "bar_num_reviews": 17, 
-    "bar_neighborhood_1": "Financial District", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/united-irish-cultural-center-san-francisco": {
     "bar_category_1": "Venues & Event Spaces", 
     "bar_category_3": "none", 
@@ -16802,21 +15311,6 @@
     "bar_num_reviews": 453, 
     "bar_neighborhood_1": "Civic Center", 
     "bar_neighborhood_2": "Hayes Valley", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.5
-  }, 
-  "/biz/mucky-duck-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "mucky-duck-san-francisco", 
-    "bar_name": "Mucky Duck", 
-    "lon": -122.251011296232, 
-    "bar_address": "1315 9th Ave, San Francisco, CA 94122", 
-    "lat": 37.7925906733045, 
-    "bar_num_reviews": 174, 
-    "bar_neighborhood_1": "Inner Sunset", 
-    "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
   }, 
@@ -17284,21 +15778,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.5
-  }, 
-  "/biz/south-at-sfjazz-san-francisco": {
-    "bar_category_1": "Mexican", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "south-at-sfjazz-san-francisco", 
-    "bar_name": "South at SFJazz", 
-    "lon": -122.081147, 
-    "bar_address": "201 Franklin St, San Francisco, CA 94102", 
-    "lat": 37.394523, 
-    "bar_num_reviews": 49, 
-    "bar_neighborhood_1": "Hayes Valley", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/moffitt-cafe-san-francisco-4": {
     "bar_category_1": "Cafes", 
@@ -17960,21 +16439,6 @@
     "bar_neighborhood_3": "South Beach", 
     "bar_rating": 3.5
   }, 
-  "/biz/brunos-pizzeria-cucina-san-francisco-2": {
-    "bar_category_1": "Pizza", 
-    "bar_category_3": "Sports Bars", 
-    "bar_category_2": "Italian", 
-    "file_name": "brunos-pizzeria-cucina-san-francisco-2", 
-    "bar_name": "Bruno\u2019s Pizzeria Cucina", 
-    "lon": -122.3578868, 
-    "bar_address": "1375 Fillmore St, San Francisco, CA 94115", 
-    "lat": 37.9531282, 
-    "bar_num_reviews": 168, 
-    "bar_neighborhood_1": "Western Addition", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
-  }, 
   "/biz/pacific-catch-san-francisco-2": {
     "bar_category_1": "Seafood", 
     "bar_category_3": "none", 
@@ -18140,21 +16604,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/the-condor-club-san-francisco": {
-    "bar_category_1": "Adult Entertainment", 
-    "bar_category_3": "American (Traditional)", 
-    "bar_category_2": "Bars", 
-    "file_name": "the-condor-club-san-francisco", 
-    "bar_name": "The Condor Club", 
-    "lon": -122.3457857, 
-    "bar_address": "560 Broadway St, San Francisco, CA 94133", 
-    "lat": 37.9691074, 
-    "bar_num_reviews": 100, 
-    "bar_neighborhood_1": "North Beach/Telegraph Hill", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/boulevard-san-francisco": {
     "bar_category_1": "French", 
     "bar_category_3": "none", 
@@ -18244,21 +16693,6 @@
     "bar_neighborhood_2": "Lower Nob Hill", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 3.5
-  }, 
-  "/biz/bar-none-san-francisco": {
-    "bar_category_1": "Pubs", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Cocktail Bars", 
-    "file_name": "bar-none-san-francisco", 
-    "bar_name": "Bar None", 
-    "lon": -122.286618701166, 
-    "bar_address": "1980 Union St, San Francisco, CA 94123", 
-    "lat": 37.81453196223, 
-    "bar_num_reviews": 601, 
-    "bar_neighborhood_1": "Marina/Cow Hollow", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 2.5
   }, 
   "/biz/donworth-event-center-san-francisco": {
     "bar_category_1": "Venues & Event Spaces", 
@@ -18545,21 +16979,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/bourbon-and-branch-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "bourbon-and-branch-san-francisco", 
-    "bar_name": "Bourbon & Branch", 
-    "lon": -122.5650191, 
-    "bar_address": "501 Jones St, San Francisco, CA 94102", 
-    "lat": 37.9707559, 
-    "bar_num_reviews": 2365, 
-    "bar_neighborhood_1": "Tenderloin", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 4.0
-  }, 
   "/biz/per-diem-san-francisco": {
     "bar_category_1": "American (New)", 
     "bar_category_3": "none", 
@@ -18665,21 +17084,6 @@
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
   }, 
-  "/biz/club-mari-s-san-francisco": {
-    "bar_category_1": "Bars", 
-    "bar_category_3": "none", 
-    "bar_category_2": "none", 
-    "file_name": "club-mari-s-san-francisco", 
-    "bar_name": "Club Mari-S", 
-    "lon": -122.276908702238, 
-    "bar_address": "1581 Webster St, San Francisco, CA 94115", 
-    "lat": 37.7748433158127, 
-    "bar_num_reviews": 6, 
-    "bar_neighborhood_1": "Japantown", 
-    "bar_neighborhood_2": "Lower Pacific Heights", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 2.0
-  }, 
   "/biz/royal-oak-san-francisco": {
     "bar_category_1": "Bars", 
     "bar_category_3": "none", 
@@ -18709,19 +17113,6 @@
     "bar_neighborhood_2": "none", 
     "bar_neighborhood_3": "none", 
     "bar_rating": 4.0
-  }, 
-  "/biz/mekeni-restaurant-and-karaoke-bar-daly-city": {
-    "bar_category_1": "Filipino", 
-    "bar_category_3": "none", 
-    "bar_category_2": "Karaoke", 
-    "file_name": "mekeni-restaurant-and-karaoke-bar-daly-city", 
-    "bar_name": "Mekeni Restaurant & Karaoke Bar", 
-    "bar_address": "6339 Mission St, Daly City, CA 94014", 
-    "bar_num_reviews": 10, 
-    "bar_neighborhood_1": "none", 
-    "bar_neighborhood_2": "none", 
-    "bar_neighborhood_3": "none", 
-    "bar_rating": 3.0
   }, 
   "/biz/ironside-west-coast-bbq-san-francisco": {
     "bar_category_1": "Sandwiches", 
